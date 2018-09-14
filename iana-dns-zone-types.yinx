@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <module name="iana-dns-zone-types"
         xmlns="urn:ietf:params:xml:ns:yang:yin:1"
-        xmlns:ianadns="urn:ietf:params:xml:ns:iana-dns-zone-types"
-        xmlns:h="http://www.w3.org/1999/xhtml">
+        xmlns:dnsz="urn:ietf:params:xml:ns:iana-dns-zone-types"
+        xmlns:h="http://www.w3.org/1999/xhtml"
+	xmlns:xi="http://www.w3.org/2001/XInclude">
   <namespace uri="urn:ietf:params:xml:ns:iana-dns-zone-types"/>
   <prefix value="dnsz"/>
   <yang-version value="1.1"/>
-  <organization>
-    <text>IETF DNSOP (Domain Name System Operations) Working Groupi</text>
-  </organization>
+  <xi:include href=".tools/bplate/dnsop-module.yinx"
+              xpointer="xpointer(id('org'))"/>
   <contact>
     <text>
+      <xi:include href=".tools/bplate/dnsop-module.yinx"
+                  xpointer="xpointer(id('contact')/*)"/>
       <h:p>
         Author:   Ladislav Lhotka<h:br/>
                   &lt;mailto:lhotka@nic.cz&gt;

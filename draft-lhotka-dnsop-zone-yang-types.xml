@@ -37,7 +37,7 @@
     </author>
     <date year="YYYY-MM-DD"/>
     <area/>
-    &netmod-wg; 		<!--or another WG -->
+    &dnsop-wg;
 
     <abstract>
       <t></t>
