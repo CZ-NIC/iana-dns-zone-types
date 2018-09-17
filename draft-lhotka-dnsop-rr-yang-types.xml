@@ -41,13 +41,23 @@
     &dnsop-wg;
 
     <abstract>
-      <t></t>
+      <t>This document contains the initial revision of the
+      iana-dns-rr-types YANG module.</t>
     </abstract>
   </front>
 
   <middle>
     <section anchor="introduction" title="Introduction">
-      <t>TBD</t>
+      <t>This document contains the initial revision of the
+      iana-dns-rr-types YANG module. This module defines derived types
+      for the common parameters of DNS resource records: class and
+      type. These types, &quot;rr-class&quot; and &quot;rr-type&quot;,
+      reflect the IANA registries &quot;DNS CLASSes&quot; and
+      &quot;Resource Record (RR) TYPEs&quot; <xref
+      target="IANA-DNS-PARAMETERS"/>.</t>
+      <t>Whenever a new class or RR type is added to the above
+      registries, the iana-dns-rr-types YANG module is also updated by
+      IANA.</t>
     </section>
 
     <section anchor="yang" title="YANG Module">
@@ -81,6 +91,16 @@
 
   <back>
     <references title="Normative References">
+      <reference anchor="IANA-DNS-PARAMETERS"
+		 target="https://www.iana.org/assignments/dns-parameters">
+	<front>
+	  <title>Domain Name System (DNS) Parameters</title>
+	  <author>
+	    <organization>Internet Assigned Numbers Authority</organization>
+	  </author>
+	  <date day="08" month="January" year="2018"/>
+	</front>
+      </reference>
       &RFC6020;
     </references>
   </back>
