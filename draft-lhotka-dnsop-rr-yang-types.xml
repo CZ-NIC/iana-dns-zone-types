@@ -22,7 +22,8 @@
 
 <rfc category="std">
   <front>
-    <title abbrev="dns-zone-yang-types">YANG Types for DNS Zone Data</title>
+    <title abbrev="dns-rr-yang-types">YANG Types for DNS Resource
+    Records</title>
     <author fullname="Ladislav Lhotka" initials="L." surname="Lhotka">
       <organization>CZ.NIC</organization>
       <address>
@@ -54,13 +55,21 @@
       <t></t>
 
       <figure>
-	&iana-dns-zone-types.yang;
+	&iana-dns-rr-types.yang;
       </figure>
 
     </section>
 
     <section anchor="iana" title="IANA Considerations">
-      <t></t>
+
+      <section title="URI Registrations">
+	
+      </section>
+
+      <section title="YANG Module Registrations">
+	<t><xref target="RFC6020"/></t>
+      </section>
+
     </section>
 
     <section anchor="security" title="Security Considerations">
@@ -72,7 +81,7 @@
 
   <back>
     <references title="Normative References">
-      &RFC2119;
+      &RFC6020;
     </references>
   </back>
 </rfc>
