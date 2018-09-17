@@ -7,20 +7,12 @@
   <namespace uri="urn:ietf:params:xml:ns:yang:iana-dns-rr-types"/>
   <prefix value="dnsrr"/>
   <yang-version value="1.1"/>
-  <xi:include href=".tools/bplate/dnsop-module.yinx"
+  <xi:include href=".tools/bplate/iana-module.yinx"
               xpointer="xpointer(id('org'))"/>
   <contact>
     <text>
-      <xi:include href=".tools/bplate/dnsop-module.yinx"
+      <xi:include href=".tools/bplate/iana-module.yinx"
                   xpointer="xpointer(id('contact')/*)"/>
-      <h:p>
-        Author:   Ladislav Lhotka<h:br/>
-                  &lt;mailto:lhotka@nic.cz&gt;
-      </h:p>
-      <h:p>
-        Author:   Petr Spacek<h:br/>
-                  &lt;mailto:petr.spacek@nic.cz&gt;
-      </h:p>
     </text>
   </contact>
   <description>
