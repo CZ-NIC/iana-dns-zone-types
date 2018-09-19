@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<module name="iana-dns-rr-types"
+<module name="iana-dns-zone-types"
         xmlns="urn:ietf:params:xml:ns:yang:yin:1"
-        xmlns:dnsz="urn:ietf:params:xml:ns:yang:iana-dns-rr-types"
+        xmlns:dnsz="urn:ietf:params:xml:ns:yang:iana-dns-zone-types"
         xmlns:h="http://www.w3.org/1999/xhtml"
 	xmlns:xi="http://www.w3.org/2001/XInclude">
-  <namespace uri="urn:ietf:params:xml:ns:yang:iana-dns-rr-types"/>
-  <prefix value="dnsrr"/>
+  <namespace uri="urn:ietf:params:xml:ns:yang:iana-dns-zone-types"/>
+  <prefix value="dnszone"/>
   <yang-version value="1.1"/>
   <xi:include href=".tools/bplate/iana-module.yinx"
               xpointer="xpointer(id('org'))"/>
@@ -16,9 +16,9 @@
     </text>
   </contact>
   <description>
-    <text>This YANG module contains a collection of derived types to
-    be used for DNS zone data. All types are direct counterparts of
-    the corresponding IANA registries.</text>
+    <text>This YANG module two common derived types to be used for DNS
+    zone data. Both types are direct counterparts of the corresponding
+    IANA registries.</text>
   </description>
   <reference>
     <text>

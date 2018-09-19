@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE rfc SYSTEM ".tools/schema/rfc2629.dtd" [
+<!ENTITY % COMMON SYSTEM ".tools/bplate/common.ent">
+%COMMON;
+<!ENTITY % WG SYSTEM ".tools/bplate/ietf-wg.ent">
+%WG;
+<!ENTITY % stdrefs SYSTEM "stdrefs.ent">
+%stdrefs;
+<!ENTITY % figures SYSTEM "figures.ent">
+%figures;
+<!ENTITY % yang SYSTEM "yang.ent">
+%yang;
+]>
+
+<?rfc strict="yes"?>
+<?rfc toc="yes"?>
+<?rfc tocdepth="3"?>
+<?rfc symrefs="yes"?>
+<?rfc sortrefs="yes"?>
+<?rfc compact="yes"?>
+<?rfc subcompact="no"?>
+
+<rfc category="std">
+  <front>
+    <title abbrev="dns-zone-yang-types">YANG Types for DNS Classes and
+    Resource Record Types</title>
+    <author fullname="Ladislav Lhotka" initials="L." surname="Lhotka">
+      <organization>CZ.NIC</organization>
+      <address>
+        <email>lhotka@nic.cz</email>
+      </address>
+    </author>
+    <author fullname="Petr Spacek" initials="P." surname="Spacek">
+      <organization>CZ.NIC</organization>
+      <address>
+        <email>petr.spacek@nic.cz</email>
+      </address>
+    </author>
+    <date year="2018-09-19"/>
+    <area/>
+    &dnsop-wg;
+
+    <abstract>
+      <t>This document contains the initial revision of the
+      iana-dns-zone-types YANG module.</t>
+    </abstract>
+  </front>
+
+  <middle>
+    <section anchor="introduction" title="Introduction">
+      <t>This document contains the initial revision of the
+      iana-dns-zone-types YANG module. This module defines derived types
+      for the common parameters of DNS resource records (RR): class
+      and type. These types, "rr-class" and "rr-type", reflect the
+      IANA registries "DNS CLASSes" and "Resource Record (RR) TYPEs"
+      <xref target="IANA-DNS-PARAMETERS"/>.</t>
+      <t>Whenever a new class or RR type is added to the above
+      registries, the iana-dns-zone-types YANG module is also updated by
+      IANA.</t>
+    </section>
+
+    <section anchor="design" title="YANG Design Considerations">
+
+      <t>The IANA document "Domain Name System (DNS) Parameters" <xref
+      target="IANA-DNS-PARAMETERS"/> contains altogether thirteen
+      registries. The YANG module iana-dns-zone-types defines derived
+      types corresponding to only two of the registries that are
+      useful for modeling zone data, namely "DNS CLASSes" and
+      "Resource Record (RR) TYPEs". It is expected that other
+      registries in <xref target="IANA-DNS-PARAMETERS"/> will be
+      similarly reflected in future YANG modules as necessary. This
+      way, an appropriate combination of YANG modules can be chosen
+      depending on which YANG types are needed for a given data
+      modeling purpose.</t>
+      <t><xref target="RFC3597"/> introduced the option of specifying
+      an RR class or type via its assigned decimal number, as an
+      alternative to specifying the mnemonic name. For example, the
+      "IN" class can be equivalently written as "CLASS1", and "AAAA"
+      type as "TYPE28".</t>
+      <t>Accordingly, the derived types "rr-class" and "rr-type" are
+      defined in the YANG module as a union of two member types:
+      <list style="symbols">
+	<t>16-bit decimal integer ("uint16")</t>
+	<t>mnemonic name, represented by the enumeration type
+	"rr-class-name" and "rr-type-name", respectively.</t>
+      </list>
+      </t>
+      
+    </section>
+
+    <section anchor="yang" title="YANG Module">
+
+      &ed-hint-fill-in;
+
+      <figure>
+        &iana-dns-zone-types.yang;
+      </figure>
+
+    </section>
+
+    <section anchor="iana" title="IANA Considerations">
+
+      <t>RFC Editor: In this section, replace all occurrences of
+      'XXXX' with the actual RFC number.</t>
+
+      <t>This document defines the initial version of the
+      IANA-maintained iana-dns-zone-types YANG module.</t>
+      <t>The iana-dns-zone-types YANG module is intended to reflect the
+      "DNS CLASSes" and "Resource Record (RR)
+      TYPEs" registries in <xref
+      target="IANA-DNS-PARAMETERS"/>.</t>
+      <t>IANA has added this new note to the "iana-dns-zone-types
+      YANG Module" registry:</t>
+
+      <figure>
+        <artwork>
+   Classes and types of DNS resource records must not be directly
+   added to the iana-dns-zone-types YANG module. They must instead
+   be added to the "DNS CLASSes" and "Resource Record (RR) TYPEs"
+   registries, respectively.
+        </artwork>
+      </figure>
+
+      <t>When a new RR class or type is added to the "DNS CLASSes" or
+      "Resource Record (RR) TYPEs" registry, a new "enum" statement
+      must be added to the "rr-class-name" or "rr-type-name" type,
+      respectively. The assigned name defined by the "enum" statement
+      is the same as the mnemonic name of the new RR class or
+      type. The following substatements to the "enum" statement should
+      be defined:
+
+      <list style="hanging" hangIndent="15">
+        <t hangText="&quot;value&quot;:">Use the decimal value from
+        the registry.</t>
+        <t hangText="&quot;status&quot;:">Include only if a RR class
+        or type registration has been deprecated (use the value
+        "deprecated") or obsoleted (use the value "obsolete").</t>
+        <t hangText="&quot;description&quot;:">Replicate the
+        corresponding information from the registry, namely the full
+        name of the new RR class, or the meaning of the new RR type,
+        if any.</t>
+        <t hangText="&quot;reference&quot;:">Replicate the reference
+        from the registry, if any, and add the title of the document,
+        if applicable.</t>
+      </list></t>
+      <t>Unassigned or reserved values are not included in the YANG
+      module.</t>
+      <t>Each time the iana-dns-zone-types YANG module is updated, a new
+      "revision" statement must be added before the existing
+      "revision" statements.</t>
+      
+      <t>IANA has added this new note to the "DNS CLASSes" and
+      "Resource Record (RR) TYPEs" registries:</t>
+      <figure>
+        <artwork>
+   When this registry is modified, the YANG module
+   iana-dns-zone-types must be updated as defined in RFC XXXX.
+        </artwork>
+      </figure>
+
+      <t>The "Reference" text in the "DNS CLASSes" registry has been
+      updated as follows:</t>
+      <figure>
+        <artwork>
+   OLD:
+     [RFC6895]
+
+   NEW:
+     [RFC6895][RFCXXXX]
+        </artwork>
+      </figure>
+
+      <t>The "Reference" text in the "Resource Record (RR) TYPEs"
+      registry has been updated as follows:</t>
+      <figure>
+        <artwork>
+   OLD:
+     [RFC6895][RFC1035]
+
+   NEW:
+     [RFC6895][RFC1035][RFCXXXX]
+        </artwork>
+      </figure>
+
+      <section title="URI Registrations">
+
+        <t>This document registers a URI in the "IETF XML Registry"
+        <xref target="RFC3688"/>. The following registration has been
+        made:</t>
+        <figure>
+          <artwork>
+   URI: urn:ietf:params:xml:ns:yang:iana-dns-zone-types
+   Registrant Contact: The IESG.
+   XML: N/A, the requested URI is an XML namespace.
+          </artwork>
+        </figure>
+        
+      </section>
+
+      <section title="YANG Module Registrations">
+        <t>This document registers a YANG module in the "YANG Module
+        Names" registry <xref target="RFC6020"/>. The following
+        registration has been made:</t>
+        <figure>
+          <artwork>
+   name:      iana-dns-zone-types
+   namespace: urn:ietf:params:xml:ns:yang:iana-dns-zone-types
+   prefix:    dnszone
+   reference: RFC XXXX
+          </artwork>
+        </figure>
+
+      </section>
+
+    </section>
+
+    <section anchor="security" title="Security Considerations">
+      
+      <t>This documents translates two IANA registries into YANG data
+      types and otherwise introduces no technology or
+      protocol. Consequently, there are no security issues to be
+      considered for this document.</t>
+
+    </section>
+
+  </middle>
+
+  <back>
+    <references title="Normative References">
+      <reference anchor="IANA-DNS-PARAMETERS"
+                 target="https://www.iana.org/assignments/dns-parameters">
+        <front>
+          <title>Domain Name System (DNS) Parameters</title>
+          <author>
+            <organization>Internet Assigned Numbers Authority</organization>
+          </author>
+          <date day="08" month="January" year="2018"/>
+        </front>
+      </reference>
+      &RFC3688;
+      &RFC6020;
+    </references>
+
+    <references title="Informative References">
+      &RFC3597;
+    </references>
+    
+  </back>
+</rfc>
