@@ -66,7 +66,7 @@
 	  <text>Chaos</text>
 	</description>
 	<reference>
-	  <text>Moon, D., "Chaosnet", A. I. Memo 628, MIT Artificial
+	  <text>Moon, D., 'Chaosnet', A. I. Memo 628, MIT Artificial
 	  Intelligence Laboratory, June 1981</text>
 	</reference>
       </enum>
@@ -76,7 +76,7 @@
 	  <text>Hesiod</text>
 	</description>
 	<reference>
-	  <text>Dyer, S. and Hsu, F, "Hesiod", Project Athena
+	  <text>Dyer, S. and Hsu, F, 'Hesiod', Project Athena
 	  Technical Plan - Name Service, April 1987</text>
 	</reference>
       </enum>
@@ -105,7 +105,8 @@
   <typedef name="rr-class">
     <description>
       <text>This type allows for referring to a DNS resource record
-      class using either a mnemonic name or numeric value.</text>
+      class using either the assigned mnemonic name or numeric
+      value.</text>
     </description>
     <type name="union">
       <type name="uint16"/>
@@ -430,8 +431,8 @@
 	      System (DNS)</h:li>
 	      <h:li>RFC 2537: RSA/MD5 KEYs and SIGs in the Domain Name
 	      System (DNS)</h:li>
-	      <h:li>RFC 2931: DNS Request and Transaction Signatures (
-	      SIG(0)s )</h:li>
+	      <h:li>RFC 2931: DNS Request and Transaction Signatures
+	      (SIG(0)s)</h:li>
 	      <h:li>RFC 3110: RSA/SHA-1 SIGs and RSA KEYs in the
 	      Domain Name System (DNS)</h:li>
 	      <h:li>RFC 3008: Domain Name System Security (DNSSEC)
@@ -571,7 +572,7 @@
 	  </text>
 	</description>
 	<reference>
-	  <text>ATM Forum Technical Committee, "ATM Name System V2.0",
+	  <text>ATM Forum Technical Committee, 'ATM Name System V2.0',
 	  AF-DANS-0152.00, July 2000</text>
 	</reference>
       </enum>
@@ -1193,7 +1194,8 @@
   <typedef name="rr-type">
     <description>
       <text>This type allows for referring to a DNS resource record
-      type using either a mnemonic name or numeric value.</text>
+      type using either the assigned mnemonic name or numeric
+      value.</text>
     </description>
     <type name="union">
       <type name="uint16"/>

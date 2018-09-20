@@ -49,11 +49,11 @@
   <middle>
     <section anchor="introduction" title="Introduction">
       <t>This document contains the initial revision of the
-      iana-dns-zone-types YANG module. This module defines derived types
-      for the common parameters of DNS resource records (RR): class
-      and type. These types, "rr-class" and "rr-type", reflect the
-      IANA registries "DNS CLASSes" and "Resource Record (RR) TYPEs"
-      <xref target="IANA-DNS-PARAMETERS"/>.</t>
+      iana-dns-zone-types YANG module. This module defines derived
+      types for the common parameters of DNS resource records (RR):
+      class and type. These YANG types, "rr-class" and "rr-type",
+      reflect the IANA registries "DNS CLASSes" and "Resource Record
+      (RR) TYPEs" <xref target="IANA-DNS-PARAMETERS"/>.</t>
       <t>Whenever a new class or RR type is added to the above
       registries, the iana-dns-zone-types YANG module is also updated by
       IANA.</t>
