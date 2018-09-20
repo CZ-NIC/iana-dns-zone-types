@@ -85,12 +85,15 @@
 	"rr-class-name" and "rr-type-name", respectively.</t>
       </list>
       </t>
+      <t>As unassigned and reserved class and types values are not
+      included in the mnemonic name enumerations, they can be used only
+      via their decimal codes.</t>
       
     </section>
 
     <section anchor="yang" title="YANG Module">
 
-      &ed-hint-fill-in;
+      &ed-hint-rfcno-rev;
 
       <figure>
         &iana-dns-zone-types.yang;
@@ -100,8 +103,7 @@
 
     <section anchor="iana" title="IANA Considerations">
 
-      <t>RFC Editor: In this section, replace all occurrences of
-      'XXXX' with the actual RFC number.</t>
+      &ed-hint-rfcno;
 
       <t>This document defines the initial version of the
       IANA-maintained iana-dns-zone-types YANG module.</t>

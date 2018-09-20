@@ -16,9 +16,13 @@
     </text>
   </contact>
   <description>
-    <text>This YANG module two common derived types to be used for DNS
-    zone data. Both types are direct counterparts of the corresponding
-    IANA registries.</text>
+    <text>
+      <h:p>This YANG module defines two common derived types to be
+      used for DNS zone data. Both types are direct counterparts of
+      the corresponding IANA registries.</h:p>
+      <xi:include href=".tools/bplate/common-module.yinx"
+                  xpointer="xpointer(id('desc')/*)"/>
+    </text>
   </description>
   <reference>
     <text>
