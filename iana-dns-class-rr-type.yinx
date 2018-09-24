@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<module name="iana-dns-zone-types"
+<module name="iana-dns-class-rr-type"
         xmlns="urn:ietf:params:xml:ns:yang:yin:1"
-        xmlns:dnsz="urn:ietf:params:xml:ns:yang:iana-dns-zone-types"
+        xmlns:dnsz="urn:ietf:params:xml:ns:yang:iana-dns-class-rr-type"
         xmlns:h="http://www.w3.org/1999/xhtml"
 	xmlns:xi="http://www.w3.org/2001/XInclude">
-  <namespace uri="urn:ietf:params:xml:ns:yang:iana-dns-zone-types"/>
-  <prefix value="dnszone"/>
+  <namespace uri="urn:ietf:params:xml:ns:yang:iana-dns-class-rr-type"/>
+  <prefix value="dnsct"/>
   <yang-version value="1.1"/>
   <xi:include href=".tools/bplate/iana-module.yinx"
               xpointer="xpointer(id('org'))"/>
@@ -17,9 +17,8 @@
   </contact>
   <description>
     <text>
-      <h:p>This YANG module defines two common derived types to be
-      used for DNS zone data. Both types are direct counterparts of
-      the corresponding IANA registries.</h:p>
+      <h:p>This YANG module translates IANA registries 'DNS CLASSes'
+      and 'Resource Record (RR) TYPEs' to YANG derived types.</h:p>
       <xi:include href=".tools/bplate/common-module.yinx"
                   xpointer="xpointer(id('desc')/*)"/>
     </text>
@@ -30,22 +29,22 @@
       https://www.iana.org/assignments/dns-parameters</h:p>
     </text>
   </reference>
-  <revision date="2015-08-11">
+  <revision date="2018-09-24">
     <description>
       <text>Initial revision.</text>
     </description>
     <reference>
-      <text>RFC XXXX: YANG Types for DNS Resource Records</text>
+      <text>RFC XXXX: YANG Types for DNS Classes and Resource Record
+      Types</text>
     </reference>
   </revision>
 
   <!-- Typedefs -->
   
-  <typedef name="rr-class-name">
+  <typedef name="dns-class-name">
     <description>
       <text>This enumeration type defines mnemonic names and
-      corresponding numeric values of DNS resource record
-      classes.</text>
+      corresponding numeric values of DNS classes.</text>
     </description>
     <reference>
       <text>RFC 6895: Domain Name System (DNS) IANA Considerations</text>
@@ -83,7 +82,7 @@
       <enum name="NONE">
 	<value value="254"/>
 	<description>
-	  <text>QCLASS NONE - only meaningful in queries</text>
+	  <text>QCLASS NONE</text>
 	</description>
 	<reference>
 	  <text>RFC 2136: Dynamic Updates in the Domain Name System
@@ -93,24 +92,24 @@
       <enum name="ANY">
 	<value value="255"/>
 	<description>
-	  <text>QCLASS * (ANY) - only meaningful in queries</text>
+	  <text>QCLASS * (ANY)</text>
 	</description>
 	<reference>
-	  <text>RFC 1035: Domain Names - Implementation and Specification</text>
+	  <text>RFC 1035: Domain Names - Implementation and
+	  Specification</text>
 	</reference>
       </enum>
     </type>
   </typedef>
 
-  <typedef name="rr-class">
+  <typedef name="dns-class">
     <description>
-      <text>This type allows for referring to a DNS resource record
-      class using either the assigned mnemonic name or numeric
-      value.</text>
+      <text>This type allows for referring to a DNS class using either
+      the assigned mnemonic name or numeric value.</text>
     </description>
     <type name="union">
       <type name="uint16"/>
-      <type name="rr-class-name"/>
+      <type name="dns-class-name"/>
     </type>
   </typedef>
 
@@ -118,13 +117,15 @@
     <description>
       <text>This enumeration type defines mnemonic names and
       corresponding numeric values of DNS resource record
-      classes.</text>
+      types.</text>
     </description>
     <reference>
       <text>
 	<h:ul>
-	  <h:li>RFC 6895: Domain Name System (DNS) IANA Considerations</h:li>
-	  <h:li>RFC 1035: Domain Names - Implementation and Specification</h:li>
+	  <h:li>RFC 6895: Domain Name System (DNS) IANA
+	  Considerations</h:li>
+	  <h:li>RFC 1035: Domain Names - Implementation and
+	  Specification</h:li>
 	</h:ul>
       </text>
     </reference>

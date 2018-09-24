@@ -22,8 +22,8 @@
 
 <rfc category="std">
   <front>
-    <title abbrev="dns-zone-yang-types">YANG Types for DNS Classes and
-    Resource Record Types</title>
+    <title abbrev="iana-dns-class-rr-type-yang">YANG Types for DNS
+    Classes and Resource Record Types</title>
     <author fullname="Ladislav Lhotka" initials="L." surname="Lhotka">
       <organization>CZ.NIC</organization>
       <address>
@@ -41,21 +41,24 @@
     &dnsop-wg;
 
     <abstract>
-      <t>This document contains the initial revision of the
-      iana-dns-zone-types YANG module.</t>
+      <t>This document contains the initial revision of the YANG
+      module iana-dns-class-rr-type that contains derived types
+      reflecting two IANA registries: DNS CLASSes and Resource Record
+      (RR) TYPEs. These YANG types are intended as a minimum basis for
+      future data modeling work.</t>
     </abstract>
   </front>
 
   <middle>
     <section anchor="introduction" title="Introduction">
-      <t>This document contains the initial revision of the
-      iana-dns-zone-types YANG module. This module defines derived
-      types for the common parameters of DNS resource records (RR):
-      class and type. These YANG types, "rr-class" and "rr-type",
-      reflect the IANA registries "DNS CLASSes" and "Resource Record
-      (RR) TYPEs" <xref target="IANA-DNS-PARAMETERS"/>.</t>
+      <t>This document contains the initial revision of the YANG
+      module iana-dns-class-rr-type. This module defines derived types
+      for the common parameters of DNS resource records (RR): class
+      and type. These YANG types, "dns-class" and "rr-type", reflect
+      the IANA registries "DNS CLASSes" and "Resource Record (RR)
+      TYPEs" <xref target="IANA-DNS-PARAMETERS"/>.</t>
       <t>Whenever a new class or RR type is added to the above
-      registries, the iana-dns-zone-types YANG module is also updated by
+      registries, the iana-dns-class-rr-type YANG module is also updated by
       IANA.</t>
     </section>
 
@@ -63,26 +66,27 @@
 
       <t>The IANA document "Domain Name System (DNS) Parameters" <xref
       target="IANA-DNS-PARAMETERS"/> contains altogether thirteen
-      registries. The YANG module iana-dns-zone-types defines derived
-      types corresponding to only two of the registries that are
-      useful for modeling zone data, namely "DNS CLASSes" and
-      "Resource Record (RR) TYPEs". It is expected that other
-      registries in <xref target="IANA-DNS-PARAMETERS"/> will be
-      similarly reflected in future YANG modules as necessary. This
-      way, an appropriate combination of YANG modules can be chosen
-      depending on which YANG types are needed for a given data
-      modeling purpose.</t>
+      registries. The YANG module iana-dns-class-rr-type defines
+      derived types corresponding to only two of the registries that
+      are essential for data models involving zone data, namely "DNS
+      CLASSes" and "Resource Record (RR) TYPEs". It is expected that
+      the remaining registries in <xref
+      target="IANA-DNS-PARAMETERS"/>, as well as other DNS-related
+      IANA registries, will be analogically reflected in future YANG
+      modules as necessary. This way, an appropriate combination of
+      YANG modules can be chosen depending on which YANG types are
+      needed for a given data modeling purpose.</t>
       <t><xref target="RFC3597"/> introduced the option of specifying
-      an RR class or type via its assigned decimal number, as an
-      alternative to specifying the mnemonic name. For example, the
-      "IN" class can be equivalently written as "CLASS1", and "AAAA"
-      type as "TYPE28".</t>
-      <t>Accordingly, the derived types "rr-class" and "rr-type" are
+      a class or type via its assigned decimal number, as an
+      alternative to the mnemonic name. For example, the "IN" class
+      can be equivalently written as "CLASS1", and "AAAA" type as
+      "TYPE28".</t>
+      <t>Accordingly, the derived types "dns-class" and "rr-type" are
       defined in the YANG module as a union of two member types:
       <list style="symbols">
 	<t>16-bit decimal integer ("uint16")</t>
 	<t>mnemonic name, represented by the enumeration type
-	"rr-class-name" and "rr-type-name", respectively.</t>
+	"dns-class-name" and "rr-type-name", respectively.</t>
       </list>
       </t>
       <t>As unassigned and reserved class and types values are not
@@ -96,7 +100,7 @@
       &ed-hint-rfcno-rev;
 
       <figure>
-        &iana-dns-zone-types.yang;
+        &iana-dns-class-rr-type.yang;
       </figure>
 
     </section>
@@ -106,48 +110,48 @@
       &ed-hint-rfcno;
 
       <t>This document defines the initial version of the
-      IANA-maintained iana-dns-zone-types YANG module.</t>
-      <t>The iana-dns-zone-types YANG module is intended to reflect the
+      IANA-maintained iana-dns-class-rr-type YANG module.</t>
+      <t>The iana-dns-class-rr-type YANG module is intended to reflect the
       "DNS CLASSes" and "Resource Record (RR)
       TYPEs" registries in <xref
       target="IANA-DNS-PARAMETERS"/>.</t>
-      <t>IANA has added this new note to the "iana-dns-zone-types
+      <t>IANA has added this new note to the "iana-dns-class-rr-type
       YANG Module" registry:</t>
 
       <figure>
         <artwork>
    Classes and types of DNS resource records must not be directly
-   added to the iana-dns-zone-types YANG module. They must instead
+   added to the iana-dns-class-rr-type YANG module. They must instead
    be added to the "DNS CLASSes" and "Resource Record (RR) TYPEs"
    registries, respectively.
         </artwork>
       </figure>
 
-      <t>When a new RR class or type is added to the "DNS CLASSes" or
-      "Resource Record (RR) TYPEs" registry, a new "enum" statement
-      must be added to the "rr-class-name" or "rr-type-name" type,
+      <t>When a new DNS class or RR type is added to the "DNS CLASSes"
+      or "Resource Record (RR) TYPEs" registry, a new "enum" statement
+      must be added to the "dns-class-name" or "rr-type-name" type,
       respectively. The assigned name defined by the "enum" statement
-      is the same as the mnemonic name of the new RR class or
-      type. The following substatements to the "enum" statement should
-      be defined:
+      is the same as the mnemonic name of the new class or type. The
+      following substatements to the "enum" statement should be
+      defined:
 
       <list style="hanging" hangIndent="15">
         <t hangText="&quot;value&quot;:">Use the decimal value from
         the registry.</t>
-        <t hangText="&quot;status&quot;:">Include only if a RR class
-        or type registration has been deprecated (use the value
+        <t hangText="&quot;status&quot;:">Include only if a class or
+        type registration has been deprecated (use the value
         "deprecated") or obsoleted (use the value "obsolete").</t>
         <t hangText="&quot;description&quot;:">Replicate the
         corresponding information from the registry, namely the full
-        name of the new RR class, or the meaning of the new RR type,
+        name of the new DNS class, or the meaning of the new RR type,
         if any.</t>
         <t hangText="&quot;reference&quot;:">Replicate the reference
         from the registry, if any, and add the title of the document,
         if applicable.</t>
       </list></t>
-      <t>Unassigned or reserved values are not included in the YANG
-      module.</t>
-      <t>Each time the iana-dns-zone-types YANG module is updated, a new
+      <t>Unassigned or reserved values are not included in the
+      "dns-class-name" and "rr-type-name" enumeration types.</t>
+      <t>Each time the iana-dns-class-rr-type YANG module is updated, a new
       "revision" statement must be added before the existing
       "revision" statements.</t>
       
@@ -156,7 +160,7 @@
       <figure>
         <artwork>
    When this registry is modified, the YANG module
-   iana-dns-zone-types must be updated as defined in RFC XXXX.
+   iana-dns-class-rr-type must be updated as defined in RFC XXXX.
         </artwork>
       </figure>
 
@@ -191,7 +195,7 @@
         made:</t>
         <figure>
           <artwork>
-   URI: urn:ietf:params:xml:ns:yang:iana-dns-zone-types
+   URI: urn:ietf:params:xml:ns:yang:iana-dns-class-rr-type
    Registrant Contact: The IESG.
    XML: N/A, the requested URI is an XML namespace.
           </artwork>
@@ -205,9 +209,9 @@
         registration has been made:</t>
         <figure>
           <artwork>
-   name:      iana-dns-zone-types
-   namespace: urn:ietf:params:xml:ns:yang:iana-dns-zone-types
-   prefix:    dnszone
+   name:      iana-dns-class-rr-type
+   namespace: urn:ietf:params:xml:ns:yang:iana-dns-class-rr-type
+   prefix:    dnsct
    reference: RFC XXXX
           </artwork>
         </figure>
