@@ -1,0 +1,145 @@
+\input slix
+
+\def\prop{{\bf Proposal: }}
+\def\opts{{\bf Options:}\numberList}
+\let\endOpts=\endNumberList
+\def\dstore#1{$\langle\hbox{#1}\rangle$}
+
+\title{YANG Types for DNS Classes and Resource Record Types}
+\subtitle{\normalSize\tt draft-lhotka-dnsop-iana-class-type-yang-00}
+
+\author{Ladislav Lhotka}{lhotka@nic.cz}
+\authorB{Petr Špaček}{petr.spacek@nic.cz}
+
+\date [2018-11-05]
+
+\slide[Objectives]
+
+\bulletList
+
+\item Kick off work on translating DNS-related IANA registries to YANG
+types.
+
+\item Enable further data modelling work --- standard or proprietary YANG
+modules for managing DNS servers, resolvers etc.
+
+\item Discuss proper granularity of YANG modules in relation to the
+corresponding IANA registries.
+
+\endBulletList
+
+\slide[Domain Name System (DNS) Parameters]
+
+\URL{https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml}
+
+13 IANA registries:
+
+\bulletList\tightList
+
+\item {\bf DNS CLASSes}
+
+\item {\bf Resource Record (RR) TYPEs}
+
+\item DNS OpCodes
+
+\item DNS RCODEs
+
+\item AFSDB RR Subtype
+
+\item DHCID RR Identifier Type Codes
+
+\item DHCID RR Digest Type Codes
+
+\item DNS Label Types
+
+\item DNS EDNS0 Option Codes (OPT)
+
+\item DNS Header Flags
+
+\item EDNS Header Flags (16 bits)
+
+\item EDNS Version Number (8 bits)
+
+\item Child Synchronization (CSYNC) Flags
+
+\endBulletList
+
+\slide[YANG Module {\it iana-dns-class-rr-type}]
+
+\bulletList
+
+\item contains derived types for DNS classes and RR types
+
+\item if the registry changes, IANA will update the module. 
+
+\endBulletList
+
+\slide[YANG Derived Types]
+
+\numberList
+
+\item Enumeration of mnemonic names
+
+\verbatim
+typedef «rr-type-name» {
+  type enumeration {
+    enum A {
+      value "1";
+      description
+        "A host address.";
+      reference
+        "RFC 1035: Domain Names - Implementation and
+         Specification";
+    }
+    ...
+  }
+}
+§
+
+\slide
+
+\item Union --- mnemonic name or number
+
+\verbatim
+typedef «rr-type» {
+  type union {
+    type uint16;
+    type rr-type-name;
+  }
+  description
+    "This type allows for referring to a DNS resource
+     record type using either the assigned mnemonic
+     name or numeric value.";
+}
+§
+
+For example, {\tt AAAA} and {\tt 28} mean the same RR type (cf. RFC 3597). 
+
+\endNumberList
+
+\slide[Other IANA Registries]
+
+\bulletList
+
+\item Domain Name System Security (DNSSEC) Algorithm Numbers (3 registries)
+
+\item Delegation Signer (DS) Resource Record (RR) Type Digest
+Algorithms (1)
+
+\item Domain Name System Security (DNSSEC) NextSECure3 (NSEC3)
+Parameters (3)
+
+\item DNSKEY FLAGS (1)
+
+\item DNS-Based Authentication of Named Entities (DANE) Parameters (3)
+
+\item IPSECKEY Resource Record Parameters (2)
+
+\item DNS SSHFP Resource Record Parameters (2)
+
+\item Secret Key Transaction Authentication for DNS (TSIG) Algorithm
+Names (1)
+
+\endBulletList
+
+\bye
