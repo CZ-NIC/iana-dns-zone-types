@@ -58,6 +58,7 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 <xsl:stylesheet
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:yin="urn:ietf:params:xml:ns:yang:yin:1"
+    xmlns:md="urn:ietf:params:xml:ns:yang:ietf-yang-metadata"
     xmlns:ymt="urn:ietf:params:xml:ns:yang:ietf-yang-text-media-type"
     xmlns:html="http://www.w3.org/1999/xhtml"
     version="1.0">
@@ -207,16 +208,26 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
   </xsl:template>
 
   <xsl:template name="keyword">
+    <xsl:param name="kw" select="local-name()"/>
     <xsl:if test="count(ancestor::*)=1">
       <xsl:text>&#xA;</xsl:text>
     </xsl:if>
     <xsl:call-template name="indent"/>
-    <xsl:value-of select="name(.)"/>
+    <xsl:value-of select="$kw"/>
   </xsl:template>
 
   <xsl:template name="statement">
     <xsl:param name="arg"/>
     <xsl:call-template name="keyword"/>
+    <xsl:value-of select="concat(' ', $arg)"/>
+    <xsl:call-template name="semi-or-sub"/>
+  </xsl:template>
+
+  <xsl:template name="extension-statement">
+    <xsl:param name="arg"/>
+    <xsl:call-template name="keyword">
+      <xsl:with-param name="kw" select="name()"/>
+    </xsl:call-template>
     <xsl:value-of select="concat(' ', $arg)"/>
     <xsl:call-template name="semi-or-sub"/>
   </xsl:template>
@@ -345,6 +356,12 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 	     |yin:notification|yin:rpc|yin:submodule
 	     |yin:type|yin:typedef|yin:uses">
     <xsl:call-template name="statement">
+      <xsl:with-param name="arg" select="@name"/>
+    </xsl:call-template>
+  </xsl:template>
+
+  <xsl:template match="md:annotation">
+    <xsl:call-template name="extension-statement">
       <xsl:with-param name="arg" select="@name"/>
     </xsl:call-template>
   </xsl:template>

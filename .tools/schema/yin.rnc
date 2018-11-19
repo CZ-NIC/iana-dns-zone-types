@@ -1,6 +1,6 @@
 # Program name: yin.rng
 # 
-# Copyright © 2015 by Ladislav Lhotka, CZ.NIC <lhotka@nic.cz>
+# Copyright © 2018 by Ladislav Lhotka, CZ.NIC <lhotka@nic.cz>
 # 
 # RELAX NG schema for YIN (see RFC 6020).
 # 
@@ -19,11 +19,12 @@
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 namespace dc = "http://purl.org/dc/terms"
+namespace md = "urn:ietf:params:xml:ns:yang:ietf-yang-metadata"
 default namespace ns1 = "urn:ietf:params:xml:ns:yang:yin:1"
 
 dc:title [ "RELAX NG Schema for YIN" ]
 dc:creator [ "Ladislav Lhotka" ]
-dc:date [ "2013-12-04" ]
+dc:date [ "2018-11-19" ]
 dc:subject [ "YIN, XML syntax for YANG" ]
 dc:identifier [ "urn:ietf:params:xml:ns:yang:yin:1" ]
 dc:description [
@@ -57,7 +58,8 @@ meta-stmts = organization-stmt? & contact-stmt? & desc-ref
 linkage-stmts = (import-stmt | include-stmt)*
 revision-stmts = revision-stmt*
 body-stmts =
-  (extension-stmt
+  (annotation-stmt
+   | extension-stmt
    | feature-stmt
    | identity-stmt
    | typedef-stmt
@@ -145,6 +147,15 @@ revision-stmt =
   element revision {
     attribute date { xsd:date },
     (desc-ref & extensions)
+  }
+annotation-stmt =
+  element md:annotation {
+    attribute name { identifier },
+    (status-desc-ref
+     & if-feature-stmts
+     & type-stmt
+     & units-stmt?
+     & extensions)
   }
 extension-stmt =
   element extension {
@@ -622,16 +633,14 @@ deviate-replace-stmt =
      & max-elements-stmt?)
   }
 extensions =
-  element * - ns1:* {
+  element * - (ns1:* | md:*) {
     (attribute * { text }
      | any-element)*
   }*
 any-element =
   element * {
-    mixed {
-      (attribute * { text }
-       | any-element)*
-    }
+    (attribute * - xml:id { text }
+     | any-element)*
   }
 # Common combinations of patterns
 desc-ref = description-stmt? & reference-stmt?

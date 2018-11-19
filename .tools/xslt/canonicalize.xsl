@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Program name: canonicalize.xsl
 
-Copyright © 2015 by Ladislav Lhotka, CZ.NIC <lhotka@nic.cz>
+Copyright © 2018 by Ladislav Lhotka, CZ.NIC <lhotka@nic.cz>
 
 This stylesheet rearranges a YIN module into canonical order [RFC 6020].
 
@@ -22,6 +22,7 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xi="http://www.w3.org/2001/XInclude"
     xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:md="urn:ietf:params:xml:ns:yang:ietf-yang-metadata"
     xmlns:yin="urn:ietf:params:xml:ns:yang:yin:1"
     xmlns:ymt="urn:ietf:params:xml:ns:yang:ietf-yang-text-media-type"
 		version="1.0">
@@ -61,10 +62,10 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
       <xsl:apply-templates select="yin:reference"/>
       <xsl:apply-templates select="yin:revision"/>
       <xsl:apply-templates
-	  select="yin:extension|yin:feature|yin:identity|yin:typedef|
-		  yin:grouping|yin:container|yin:leaf|yin:leaf-list|
-		  yin:list|yin:choice|yin:anyxml|yin:uses|yin:augment|
-		  yin:rpc|yin:notification|yin:deviation"/>
+	  select="md:annotation|yin:extension|yin:feature|yin:identity
+		  |yin:typedef|yin:grouping|yin:container|yin:leaf
+		  |yin:leaf-list|yin:list|yin:choice|yin:anyxml|yin:uses
+		  |yin:augment|yin:rpc|yin:notification|yin:deviation"/>
     </xsl:copy>
   </xsl:template>
   <xsl:template match="yin:submodule">
@@ -83,10 +84,22 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
       <xsl:apply-templates select="yin:reference"/>
       <xsl:apply-templates select="yin:revision"/>
       <xsl:apply-templates
-	  select="yin:extension|yin:feature|yin:identity|yin:typedef|
-		  yin:grouping|yin:container|yin:leaf|yin:leaf-list|
-		  yin:list|yin:choice|yin:anyxml|yin:uses|yin:augment|
-		  yin:rpc|yin:notification|yin:deviation"/>
+	  select="md:annotation|yin:extension|yin:feature|yin:identity
+		  |yin:typedef|yin:grouping|yin:container|yin:leaf
+		  |yin:leaf-list|yin:list|yin:choice|yin:anyxml|yin:uses
+		  |yin:augment|yin:rpc|yin:notification|yin:deviation"/>
+    </xsl:copy>
+  </xsl:template>
+  <xsl:template match="md:annotation">
+    <xsl:call-template name="preceding-comment"/>
+    <xsl:copy>
+      <xsl:apply-templates select="html:*|xi:*|@*|text()"/>
+      <xsl:apply-templates select="yin:if-feature"/>
+      <xsl:apply-templates select="yin:type"/>
+      <xsl:apply-templates select="yin:units"/>
+      <xsl:apply-templates select="yin:status"/>
+      <xsl:apply-templates select="yin:description"/>
+      <xsl:apply-templates select="yin:reference"/>
     </xsl:copy>
   </xsl:template>
   <xsl:template match="yin:feature">
