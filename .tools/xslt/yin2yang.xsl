@@ -59,7 +59,6 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:yin="urn:ietf:params:xml:ns:yang:yin:1"
     xmlns:md="urn:ietf:params:xml:ns:yang:ietf-yang-metadata"
-    xmlns:ymt="urn:ietf:params:xml:ns:yang:ietf-yang-text-media-type"
     xmlns:html="http://www.w3.org/1999/xhtml"
     version="1.0">
   <xsl:output method="text"/>
@@ -340,12 +339,6 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
   <xsl:template match="/">
     <xsl:apply-templates select="yin:module|yin:submodule|comment()"/>
-  </xsl:template>
-
-  <xsl:template match="ymt:text-media-type[@type='text/html']">
-    <xsl:call-template name="statement-dq">
-      <xsl:with-param name="arg">text/markdown; charset=UTF-8</xsl:with-param>
-    </xsl:call-template>
   </xsl:template>
 
   <xsl:template
