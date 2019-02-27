@@ -42,7 +42,7 @@ module iana-dns-class-rr-type {
     "IANA 'Domain Name System (DNS) Parameters' registry
      https://www.iana.org/assignments/dns-parameters";
 
-  revision 2018-10-26 {
+  revision 2019-02-27 {
     description
       "Initial revision.";
     reference
