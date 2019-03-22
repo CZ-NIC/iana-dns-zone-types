@@ -111,7 +111,7 @@ model.tree: hello.xml
 	pyang $(PYANG_OPTS) -f tree -o $@ -L $<
 
 gittag: $(idrev).txt
-	git tag -a -s -m "I-D revision $(REVNO)" "rev-$(REVNO)"
+	git tag -a -s -m "I-D revision $(REVNO)" "$(I_D)-$(REVNO)"
 	git push --follow-tags
 
 clean:
