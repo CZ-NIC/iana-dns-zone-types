@@ -83,7 +83,8 @@
       use various DNS parameters and enumerations that are specified
       in several IANA registries. For use with YANG, these parameters
       and enumerations have to be translated into corresponding YANG
-      types or other structures.</t>
+      types or other structures. Such translations should be
+      straightforward and relatively uncontroversial.</t>
       <t>This document is a first step in translating DNS-related IANA
       registries to YANG. It contains the initial revision of the YANG
       module "iana-dns-class-rr-type" that defines derived types
