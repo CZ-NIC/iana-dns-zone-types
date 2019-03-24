@@ -1,0 +1,144 @@
+\input slix
+
+\def\prop{{\bf Proposal: }}
+\def\opts{{\bf Options:}\numberList}
+\let\endOpts=\endNumberList
+\def\dstore#1{$\langle\hbox{#1}\rangle$}
+
+\title{YANG Types for DNS Classes and Resource Record Types}
+\subtitle{\normalSize\tt draft-lhotka-dnsop-iana-class-type-yang-01}
+
+\author{Ladislav Lhotka}{lhotka@nic.cz}
+\authorB{Petr Špaček}{petr.spacek@nic.cz}
+
+\date [2019-03-26]
+
+\slide[Summary]
+
+Two IANA registries from [1] are defined as YANG derived types:
+
+\bulletList
+
+\item DNS CLASSes
+\item Resource Record (RR) Types
+
+\endBulletList
+
+\medskip
+
+{\bf Changes since -00}
+
+\bulletList
+
+\item Only in the I-D text: more details about the context and use cases.
+
+\item The YANG module is exactly the same as in -00.
+
+\endBulletList
+
+\medskip
+{\bf Issues raised}
+
+\numberList
+
+\item Can the YANG module and registry ever get out of sync?
+
+\item Semantics of {\it deprecated}.
+
+\endNumberList
+
+\vfill
+{\petit
+[1]~\URL{https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml}}
+
+\slide[YANG Derived Types]
+
+One type is an enumeration of mnemonic names, the other also permits a
+numeric reference (cf. RFC 3597).
+
+{\petit
+
+\twoColumn{0.45}{0.45}
+
+\verbatim
+typedef «dns-class-name» {
+  type enumeration {
+    enum IN {
+      value "1";
+      ...
+    }
+    enum CH {
+      value "3";
+      ...
+    }
+    ...
+  }
+}
+
+typedef «dns-class» {
+  type union {
+    type uint16;
+    type dns-class-name;
+  }
+  ...
+}
+§
+
+\rightColumn
+ 
+\verbatim
+typedef «rr-type-name» {
+  type enumeration {
+    enum A {
+      value "1";
+      ...
+    }
+    enum NS {
+      value "2";
+    ...
+    }
+    ...
+  }
+}
+
+typedef «rr-type» {
+  type union {
+    type uint16;
+    type rr-type-name;
+  }
+  ...
+}
+§}
+
+\endColumn
+
+\slide[Issue \#1: YANG module versus registry]
+
+If there is a flaw in the registry, can it be fixed in the YANG module
+independently of the registry?
+
+We recommend not to do so: it could break the assumption that further
+updates to the module will be done by IANA based of the registry
+changes.
+
+\slide[Issue \#2: semantics of {\it deprecated}]
+
+\bulletList
+
+\item RFC 8126 (IANA registries):
+
+{\it Specific entries in a registry can be marked as "obsolete" (no longer
+in use) or "deprecated" (use is not recommended).}
+
+\item RFC 7950 (YANG):
+
+{\it “deprecated” indicates an obsolete definition, but it permits
+new/continued implementation in order to foster interoperability with
+older/existing implementations.}
+
+\endBulletList
+
+This issue is currently being discussed in the NETMOD WG, and should
+be resolved in the next version of YANG.
+
+\bye
