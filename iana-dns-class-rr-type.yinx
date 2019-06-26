@@ -133,9 +133,7 @@
       <enum name="A">
 	<value value="1"/>
 	<description>
-	  <text>
-            <h:p>A host address.</h:p>
-	  </text>
+	  <text>A host address.</text>
 	</description>
 	<reference>
 	  <text>RFC 1035: Domain Names - Implementation and
@@ -145,9 +143,7 @@
       <enum name="NS">
 	<value value="2"/> 
 	<description>
-	  <text>
-            <h:p>An authoritative name server.</h:p>
-	  </text>
+	  <text>An authoritative name server.</text>
 	</description>
 	<reference>
 	  <text>RFC 1035: Domain Names - Implementation and
@@ -158,9 +154,7 @@
 	<value value="3"/>
 	<status value="obsolete"/>
 	<description>
-	  <text>
-            <h:p>A mail destination (obsolete – use MX).</h:p>
-	  </text>
+	  <text>A mail destination (obsolete – use MX).</text>
 	</description>
 	<reference>
 	  <text>RFC 1035: Domain Names - Implementation and
@@ -171,9 +165,7 @@
 	<value value="4"/>
 	<status value="obsolete"/>
 	<description>
-	  <text>
-            <h:p>A mail forwarder (obsolete – use MX).</h:p>
-	  </text>
+	  <text>A mail forwarder (obsolete – use MX).</text>
 	</description>
 	<reference>
 	  <text>RFC 1035: Domain Names - Implementation and
@@ -183,9 +175,7 @@
       <enum name="CNAME">
 	<value value="5"/>
 	<description>
-	  <text>
-            <h:p>The canonical name for an alias.</h:p>
-	  </text>
+	  <text>The canonical name for an alias.</text>
 	</description>
 	<reference>
 	  <text>RFC 1035: Domain Names - Implementation and
@@ -195,9 +185,7 @@
       <enum name="SOA">
 	<value value="6"/>
 	<description>
-	  <text>
-            <h:p>Start of a zone of authority.</h:p>
-	  </text>
+	  <text>Start of a zone of authority.</text>
 	</description>
 	<reference>
 	  <text>RFC 1035: Domain Names - Implementation and
@@ -207,9 +195,7 @@
       <enum name="MB">
 	<value value="7"/>
 	<description>
-	  <text>
-            <h:p>A mailbox domain name (experimental).</h:p>
-	  </text>
+	  <text>A mailbox domain name (experimental).</text>
 	</description>
 	<reference>
 	  <text>RFC 1035: Domain Names - Implementation and
@@ -219,9 +205,7 @@
       <enum name="MG">
 	<value value="8"/>
 	<description>
-	  <text>
-            <h:p>A mail group member (experimental).</h:p>
-	  </text>
+	  <text>A mail group member (experimental).</text>
 	</description>
 	<reference>
 	  <text>RFC 1035: Domain Names - Implementation and
@@ -231,9 +215,7 @@
       <enum name="MR">
 	<value value="9"/>
 	<description>
-	  <text>
-            <h:p>A mail rename domain name (experimental).</h:p>
-	  </text>
+	  <text>A mail rename domain name (experimental).</text>
 	</description>
 	<reference>
 	  <text>RFC 1035: Domain Names - Implementation and
@@ -243,9 +225,7 @@
       <enum name="NULL">
 	<value value="10"/>
 	<description>
-	  <text>
-            <h:p>A null RR (experimental).</h:p>
-	  </text>
+	  <text>A null RR (experimental).</text>
 	</description>
 	<reference>
 	  <text>RFC 1035: Domain Names - Implementation and
@@ -255,9 +235,7 @@
       <enum name="WKS">
 	<value value="11"/>
 	<description>
-	  <text>
-            <h:p>A well known service description.</h:p>
-	  </text>
+	  <text>A well known service description.</text>
 	</description>
 	<reference>
 	  <text>RFC 1035: Domain Names - Implementation and
@@ -267,9 +245,7 @@
       <enum name="PTR">
 	<value value="12"/>
 	<description>
-	  <text>
-            <h:p>A domain name pointer.</h:p>
-	  </text>
+	  <text>A domain name pointer.</text>
 	</description>
 	<reference>
 	  <text>RFC 1035: Domain Names - Implementation and
@@ -279,9 +255,7 @@
       <enum name="HINFO">
 	<value value="13"/>
 	<description>
-	  <text>
-            <h:p>Host information.</h:p>
-	  </text>
+	  <text>Host information.</text>
 	</description>
 	<reference>
 	  <text>RFC 1035: Domain Names - Implementation and
@@ -291,9 +265,7 @@
       <enum name="MINFO">
 	<value value="14"/>
 	<description>
-	  <text>
-            <h:p>Mailbox or mail list information.</h:p>
-	  </text>
+	  <text>Mailbox or mail list information.</text>
 	</description>
 	<reference>
 	  <text>RFC 1035: Domain Names - Implementation and
@@ -303,9 +275,7 @@
       <enum name="MX">
 	<value value="15"/>
 	<description>
-	  <text>
-            <h:p>Mail exchange.</h:p>
-	  </text>
+	  <text>Mail exchange.</text>
 	</description>
 	<reference>
 	  <text>RFC 1035: Domain Names - Implementation and
@@ -315,9 +285,7 @@
       <enum name="TXT">
 	<value value="16"/>
 	<description>
-	  <text>
-            <h:p>Text strings.</h:p>
-	  </text>
+	  <text>Text strings.</text>
 	</description>
 	<reference>
 	  <text>RFC 1035: Domain Names - Implementation and
@@ -327,9 +295,7 @@
       <enum name="RP">
 	<value value="17"/>
 	<description>
-	  <text>
-            <h:p>Responsible person.</h:p>
-	  </text>
+	  <text>Responsible person.</text>
 	</description>
 	<reference>
 	  <text>RFC 1183: New DNS RR Definitions</text>
@@ -338,9 +304,7 @@
       <enum name="AFSDB">
 	<value value="18"/>
 	<description>
-	  <text>
-            <h:p>AFS data base location.</h:p>
-	  </text>
+	  <text>AFS data base location.</text>
 	</description>
 	<reference>
 	  <text>
@@ -354,9 +318,7 @@
       <enum name="X25">
 	<value value="19"/>
 	<description>
-	  <text>
-            <h:p>X.25 PSDN address.</h:p>
-	  </text>
+	  <text>X.25 PSDN address.</text>
 	</description>
 	<reference>
 	  <text>RFC 1183: New DNS RR Definitions</text>
@@ -365,9 +327,7 @@
       <enum name="ISDN">
 	<value value="20"/>
 	<description>
-	  <text>
-            <h:p>ISDN address.</h:p>
-	  </text>
+	  <text>ISDN address.</text>
 	</description>
 	<reference>
 	  <text>RFC 1183: New DNS RR Definitions</text>
@@ -376,9 +336,7 @@
       <enum name="RT">
 	<value value="21"/>
 	<description>
-	  <text>
-            <h:p>Route through.</h:p>
-	  </text>
+	  <text>Route through.</text>
 	</description>
 	<reference>
 	  <text>RFC 1183: New DNS RR Definitions</text>
@@ -387,9 +345,7 @@
       <enum name="NSAP">
 	<value value="22"/>
 	<description>
-	  <text>
-            <h:p>NSAP address, NSAP style A record.</h:p>
-	  </text>
+	  <text>NSAP address, NSAP style A record.</text>
 	</description>
 	<reference>
 	  <text>RFC 1706: DNS NSAP Resource Records</text>
@@ -398,9 +354,7 @@
       <enum name="NSAP-PTR">
 	<value value="23"/>
 	<description>
-	  <text>
-            <h:p>Domain name pointer, NSAP style.</h:p>
-	  </text>
+	  <text>Domain name pointer, NSAP style.</text>
 	</description>
 	<reference>
 	  <text>
@@ -415,9 +369,7 @@
       <enum name="SIG">
 	<value value="24"/>
 	<description>
-	  <text>
-            <h:p>Security signature.</h:p>
-	  </text>
+	  <text>Security signature.</text>
 	</description>
 	<reference>
 	  <text>
@@ -445,9 +397,7 @@
       <enum name="KEY">
 	<value value="25"/>
 	<description>
-	  <text>
-            <h:p>Security key.</h:p>
-	  </text>
+	  <text>Security key.</text>
 	</description>
 	<reference>
 	  <text>
@@ -475,9 +425,7 @@
       <enum name="PX">
 	<value value="26"/>
 	<description>
-	  <text>
-            <h:p>X.400 mail mapping information.</h:p>
-	  </text>
+	  <text>X.400 mail mapping information.</text>
 	</description>
 	<reference>
 	  <text>RFC 2163: Using the Internet DNS to Distribute MIXER
@@ -487,9 +435,7 @@
       <enum name="GPOS">
 	<value value="27"/>
 	<description>
-	  <text>
-            <h:p>Geographical position.</h:p>
-	  </text>
+	  <text>Geographical position.</text>
 	</description>
 	<reference>
 	  <text>RFC 1712: DNS Encoding of Geographical Location</text>
@@ -498,9 +444,7 @@
       <enum name="AAAA">
 	<value value="28"/>
 	<description>
-	  <text>
-            <h:p>IPv6 address.</h:p>
-	  </text>
+	  <text>IPv6 address.</text>
 	</description>
 	<reference>
 	  <text>RFC 3596: DNS Extensions to Support IP Version 6</text>
@@ -509,9 +453,7 @@
       <enum name="LOC">
 	<value value="29"/>
 	<description>
-	  <text>
-            <h:p>Location information.</h:p>
-	  </text>
+	  <text>Location information.</text>
 	</description>
 	<reference>
 	  <text>RFC 1876: A Means for Expressing Location Information
@@ -522,9 +464,7 @@
 	<value value="30"/>
 	<status value="obsolete"/>
 	<description>
-	  <text>
-            <h:p>Next domain (obsolete).</h:p>
-	  </text>
+	  <text>Next domain (obsolete).</text>
 	</description>
 	<reference>
 	  <text>
@@ -540,25 +480,19 @@
       <enum name="EID">
 	<value value="31"/>
 	<description>
-	  <text>
-            <h:p>Endpoint identifier.</h:p>
-	  </text>
+	  <text>Endpoint identifier.</text>
 	</description>
       </enum>
       <enum name="NIMLOC">
 	<value value="32"/>
 	<description>
-	  <text>
-            <h:p>Nimrod locator.</h:p>
-	  </text>
+	  <text>Nimrod locator.</text>
 	</description>
       </enum>
       <enum name="SRV">
 	<value value="33"/>
 	<description>
-	  <text>
-            <h:p>Server selection.</h:p>
-	  </text>
+	  <text>Server selection.</text>
 	</description>
 	<reference>
 	  <text>RFC 2782: A DNS RR for specifying the location of
@@ -568,9 +502,7 @@
       <enum name="ATMA">
 	<value value="34"/>
 	<description>
-	  <text>
-            <h:p>ATM address.</h:p>
-	  </text>
+	  <text>ATM address.</text>
 	</description>
 	<reference>
 	  <text>ATM Forum Technical Committee, 'ATM Name System V2.0',
@@ -580,9 +512,7 @@
       <enum name="NAPTR">
 	<value value="35"/>
 	<description>
-	  <text>
-            <h:p>Naming authority pointer.</h:p>
-	  </text>
+	  <text>Naming authority pointer.</text>
 	</description>
 	<reference>
 	  <text>
@@ -601,9 +531,7 @@
       <enum name="KX">
 	<value value="36"/>
 	<description>
-	  <text>
-            <h:p>Key exchanger.</h:p>
-	  </text>
+	  <text>Key exchanger.</text>
 	</description>
 	<reference>
 	  <text>RFC 2230: Key Exchange Delegation Record for the
@@ -613,9 +541,7 @@
       <enum name="CERT">
 	<value value="37"/>
 	<description>
-	  <text>
-            <h:p>Certificate.</h:p>
-	  </text>
+	  <text>Certificate.</text>
 	</description>
 	<reference>
 	  <text>RFC 4398: Storing Certificates in the Domain Name
@@ -626,9 +552,7 @@
 	<value value="38"/>
 	<status value="obsolete"/>
 	<description>
-	  <text>
-            <h:p>IPv6 address (obsolete – use AAAA).</h:p>
-	  </text>
+	  <text>IPv6 address (obsolete – use AAAA).</text>
 	</description>
 	<reference>
 	  <text>
@@ -645,9 +569,7 @@
       <enum name="DNAME">
 	<value value="39"/>
 	<description>
-	  <text>
-            <h:p>DNAME.</h:p>
-	  </text>
+	  <text>DNAME.</text>
 	</description>
 	<reference>
 	  <text>
@@ -661,17 +583,13 @@
       <enum name="SINK">
 	<value value="40"/>
 	<description>
-	  <text>
-            <h:p>Kitchen sink.</h:p>
-	  </text>
+	  <text>Kitchen sink.</text>
 	</description>
       </enum>
       <enum name="OPT">
 	<value value="41"/>
 	<description>
-	  <text>
-            <h:p>OPT pseudo-RR.</h:p>
-	  </text>
+	  <text>OPT pseudo-RR.</text>
 	</description>
 	<reference>
 	  <text>
@@ -687,9 +605,7 @@
       <enum name="APL">
 	<value value="42"/>
 	<description>
-	  <text>
-            <h:p>Address prefix list.</h:p>
-	  </text>
+	  <text>Address prefix list.</text>
 	</description>
 	<reference>
 	  <text>RFC 3123: A DNS RR Type for Lists of Address Prefixes
@@ -699,9 +615,7 @@
       <enum name="DS">
 	<value value="43"/>
 	<description>
-	  <text>
-            <h:p>Delegation signer.</h:p>
-	  </text>
+	  <text>Delegation signer.</text>
 	</description>
 	<reference>
 	  <text>
@@ -717,9 +631,7 @@
       <enum name="SSHFP">
 	<value value="44"/>
 	<description>
-	  <text>
-            <h:p>SSH key fingerprint.</h:p>
-	  </text>
+	  <text>SSH key fingerprint.</text>
 	</description>
 	<reference>
 	  <text>RFC 4255: Using DNS to Securely Publish Secure Shell
@@ -729,9 +641,7 @@
       <enum name="IPSECKEY">
 	<value value="45"/>
 	<description>
-	  <text>
-            <h:p>IPSec key.</h:p>
-	  </text>
+	  <text>IPSec key.</text>
 	</description>
 	<reference>
 	  <text>RFC 4025: A Method for Storing IPsec Keying Material
@@ -741,9 +651,7 @@
       <enum name="RRSIG">
 	<value value="46"/>
 	<description>
-	  <text>
-            <h:p>RR signature.</h:p>
-	  </text>
+	  <text>RR signature.</text>
 	</description>
 	<reference>
 	  <text>
@@ -759,9 +667,7 @@
       <enum name="NSEC">
 	<value value="47"/>
 	<description>
-	  <text>
-            <h:p>NSEC resource record.</h:p>
-	  </text>
+	  <text>NSEC resource record.</text>
 	</description>
 	<reference>
 	  <text>
@@ -777,9 +683,7 @@
       <enum name="DNSKEY">
 	<value value="48"/>
 	<description>
-	  <text>
-            <h:p>DNSKEY resource record.</h:p>
-	  </text>
+	  <text>DNSKEY resource record.</text>
 	</description>
 	<reference>
 	  <text>
@@ -795,9 +699,7 @@
       <enum name="DHCID">
 	<value value="49"/>
 	<description>
-	  <text>
-            <h:p>DHCID resource record.</h:p>
-	  </text>
+	  <text>DHCID resource record.</text>
 	</description>
 	<reference>
 	  <text>RFC 4701: A DNS Resource Record (RR) for Encoding
@@ -808,9 +710,7 @@
       <enum name="NSEC3">
 	<value value="50"/>
 	<description>
-	  <text>
-            <h:p>NSEC3 resource record.</h:p>
-	  </text>
+	  <text>NSEC3 resource record.</text>
 	</description>
 	<reference>
 	  <text>RFC 5155: DNS Security (DNSSEC) Hashed Authenticated
@@ -820,9 +720,7 @@
       <enum name="NSEC3PARAM">
 	<value value="51"/>
 	<description>
-	  <text>
-            <h:p>NSEC3PARAM resource record.</h:p>
-	  </text>
+	  <text>NSEC3PARAM resource record.</text>
 	</description>
 	<reference>
 	  <text>RFC 5155: DNS Security (DNSSEC) Hashed Authenticated
@@ -832,9 +730,7 @@
       <enum name="TLSA">
 	<value value="52"/>
 	<description>
-	  <text>
-            <h:p>TLSA resource record.</h:p>
-	  </text>
+	  <text>TLSA resource record.</text>
 	</description>
 	<reference>
 	  <text>RFC 6698: The DNS-Based Authentication of Named
@@ -855,9 +751,7 @@
       <enum name="HIP">
 	<value value="55"/>
 	<description>
-	  <text>
-            <h:p>Host identity protocol.</h:p>
-	  </text>
+	  <text>Host identity protocol.</text>
 	</description>
 	<reference>
 	  <text>RFC 5205: Host Identity Protocol (HIP) Domain Name
@@ -867,33 +761,25 @@
       <enum name="NINFO">
 	<value value="56"/>
 	<description>
-	  <text>
-            <h:p>NINFO resource record.</h:p>
-	  </text>
+	  <text>NINFO resource record.</text>
 	</description>
       </enum>
       <enum name="RKEY">
 	<value value="57"/>
 	<description>
-	  <text>
-            <h:p>RKEY resource record.</h:p>
-	  </text>
+	  <text>RKEY resource record.</text>
 	</description>
       </enum>
       <enum name="TALINK">
 	<value value="58"/>
 	<description>
-	  <text>
-            <h:p>Trust anchor LINK.</h:p>
-	  </text>
+	  <text>Trust anchor LINK.</text>
 	</description>
       </enum>
       <enum name="CDS">
 	<value value="59"/>
 	<description>
-	  <text>
-            <h:p>Child DS.</h:p>
-	  </text>
+	  <text>Child DS.</text>
 	</description>
 	<reference>
 	  <text>RFC 7344: Automating DNSSEC Delegation Trust
@@ -903,9 +789,7 @@
       <enum name="CDNSKEY">
 	<value value="60"/>
 	<description>
-	  <text>
-            <h:p>DNSKEY(s) the child wants reflected in DS.</h:p>
-	  </text>
+	  <text>DNSKEY(s) the child wants reflected in DS.</text>
 	</description>
 	<reference>
 	  <text>RFC 7344: Automating DNSSEC Delegation Trust
@@ -915,9 +799,7 @@
       <enum name="OPENPGPKEY">
 	<value value="61"/>
 	<description>
-	  <text>
-            <h:p>OpenPGP key.</h:p>
-	  </text>
+	  <text>OpenPGP key.</text>
 	</description>
 	<reference>
 	  <text>RFC 7929: DNS-Based Authentication of Named Entities
@@ -927,9 +809,7 @@
       <enum name="CSYNC">
 	<value value="62"/>
 	<description>
-	  <text>
-            <h:p>Child-to-parent synchronization.</h:p>
-	  </text>
+	  <text>Child-to-parent synchronization.</text>
 	</description>
 	<reference>
 	  <text>RFC 7477: Child-to-Parent Synchronization in
@@ -1013,9 +893,7 @@
       <enum name="EUI48">
 	<value value="108"/>
 	<description>
-	  <text>
-            <h:p>An EUI-48 address.</h:p>
-	  </text>
+	  <text>An EUI-48 address.</text>
 	</description>
 	<reference>
 	  <text>RFC 7043: Resource Records for EUI-48 and EUI-64
@@ -1025,9 +903,7 @@
       <enum name="EUI64">
 	<value value="109"/>
 	<description>
-	  <text>
-            <h:p>An EUI-64 address.</h:p>
-	  </text>
+	  <text>An EUI-64 address.</text>
 	</description>
 	<reference>
 	  <text>RFC 7043: Resource Records for EUI-48 and EUI-64
@@ -1037,9 +913,7 @@
       <enum name="TKEY">
 	<value value="249"/>
 	<description>
-	  <text>
-            <h:p>Transaction key.</h:p>
-	  </text>
+	  <text>Transaction key.</text>
 	</description>
 	<reference>
 	  <text>RFC 2930: Secret Key Establishment for DNS (TKEY
@@ -1049,9 +923,7 @@
       <enum name="TSIG">
 	<value value="250"/>
 	<description>
-	  <text>
-            <h:p>Transaction signature.</h:p>
-	  </text>
+	  <text>Transaction signature.</text>
 	</description>
 	<reference>
 	  <text>RFC 2845: Secret Key Transaction Authentication for
@@ -1061,9 +933,7 @@
       <enum name="IXFR">
 	<value value="251"/>
 	<description>
-	  <text>
-            <h:p>Incremental transfer.</h:p>
-	  </text>
+	  <text>Incremental transfer.</text>
 	</description>
 	<reference>
 	  <text>RFC 1995: Incremental Zone Transfer in DNS</text>
@@ -1072,9 +942,7 @@
       <enum name="AXFR">
 	<value value="252"/>
 	<description>
-	  <text>
-            <h:p>Transfer of an entire zone.</h:p>
-	  </text>
+	  <text>Transfer of an entire zone.</text>
 	</description>
 	<reference>
 	  <text>
@@ -1089,9 +957,7 @@
       <enum name="MAILB">
 	<value value="253"/>
 	<description>
-	  <text>
-            <h:p>Mailbox-related RRs (MB, MG or MR).</h:p>
-	  </text>
+	  <text>Mailbox-related RRs (MB, MG or MR).</text>
 	</description>
 	<reference>
 	  <text>RFC 1035: Domain Names - Implementation and
@@ -1102,9 +968,7 @@
 	<value value="254"/>
 	<status value="obsolete"/>
 	<description>
-	  <text>
-            <h:p>Mail agent RRs (obsolete – see MX).</h:p>
-	  </text>
+	  <text>Mail agent RRs (obsolete – see MX).</text>
 	</description>
 	<reference>
 	  <text>RFC 1035: Domain Names - Implementation and
@@ -1114,10 +978,8 @@
       <enum name="*">
 	<value value="255"/>
 	<description>
-	  <text>
-            <h:p>A request for all records the server/cache has
-            available.</h:p>
-	  </text>
+	  <text>A request for all records the server/cache has
+            available.</text>
 	</description>
 	<reference>
 	  <text>
@@ -1133,9 +995,7 @@
       <enum name="URI">
 	<value value="256"/>
 	<description>
-	  <text>
-            <h:p>URI resource record.</h:p>
-	  </text>
+	  <text>URI resource record.</text>
 	</description>
 	<reference>
 	  <text>RFC 7553: The Uniform Resource Identifier (URI) DNS
@@ -1145,9 +1005,7 @@
       <enum name="CAA">
 	<value value="257"/>
 	<description>
-	  <text>
-            <h:p>Certification authority authorization.</h:p>
-	  </text>
+	  <text>Certification authority authorization.</text>
 	</description>
 	<reference>
 	  <text>RFC 6844: DNS Certification Authority Authorization
@@ -1169,20 +1027,26 @@
 	  <text>draft-durand-doa-over-dns: DOA over DNS</text>
 	</reference>
       </enum>
+      <enum name="AMTRELAY">
+	<value value="260"/>
+	<description>
+	  <text>Automatic multicast tunneling relay.</text>
+	</description>
+	<reference>
+	  <text>J. Holland: DNS Reverse IP AMT
+	  Discovery. draft-ietf-mboned-driad-amt-discovery.</text>
+	</reference>
+      </enum>
       <enum name="TA">
 	<value value="32768"/>
 	<description>
-	  <text>
-            <h:p>DNSSEC trust authorities.</h:p>
-	  </text>
+	  <text>DNSSEC trust authorities.</text>
 	</description>
       </enum>
       <enum name="DLV">
 	<value value="32769"/>
 	<description>
-	  <text>
-            <h:p>DNSSEC lookaside validation.</h:p>
-	  </text>
+	  <text>DNSSEC lookaside validation.</text>
 	</description>
 	<reference>
 	  <text>RFC 4431: The DNSSEC Lookaside Validation (DLV) DNS

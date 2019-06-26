@@ -1,5 +1,5 @@
 I_D = draft-lhotka-dnsop-iana-class-type-yang
-REVNO = 01
+REVNO = 02
 DATE ?= $(shell date +%F)
 MODULES = iana-dns-class-rr-type
 SUBMODULES =
@@ -40,7 +40,7 @@ $(idrev).xml: $(I_D).xml $(yangsc) $(artworks) figures.ent yang.ent
 	  xmllint --noent -o $@ -
 
 $(idrev).txt: $(idrev).xml
-	@xml2rfc $(XML2RFC_OPTS) $<
+	xml2rfc $(XML2RFC_OPTS) $<
 
 hello.xml: $(yass) $(yams) hello-external.ent
 	@echo '<hello xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">' > $@

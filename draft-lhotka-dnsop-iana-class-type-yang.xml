@@ -20,7 +20,7 @@
 <?rfc compact="yes"?>
 <?rfc subcompact="no"?>
 
-<rfc category="std">
+<rfc category="std" submissionType="IETF" consensus="false">
   <front>
     <title abbrev="iana-dns-class-rr-type-yang">YANG Types for DNS
     Classes and Resource Record Types</title>
