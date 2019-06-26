@@ -84,7 +84,7 @@ endif
 
 %.yang.sc: %.yang
 	@pyang $(PYANG_OPTS) --ietf $<
-	@echo '<sourcecode name="'$*@$(DATE)'.yang">' > $@
+	@echo '<sourcecode name="'$*@$(DATE)'.yang" type="yang" markers="true">' > $@
 	@echo '<![CDATA[' >> $@
 	@echo >> $@
 	@cat $< >> $@
