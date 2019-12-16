@@ -8,8 +8,7 @@
 %stdrefs;
 <!ENTITY % figures SYSTEM "figures.ent">
 %figures;
-<!ENTITY % yang SYSTEM "yang.ent">
-%yang;
+<!ENTITY xslt SYSTEM "iana-dns-class-rr-type.xsl.cdata">
 ]>
 
 <?rfc strict="yes"?>
@@ -131,16 +130,6 @@
       included in the mnemonic name enumerations, they can be used only
       via their decimal codes.</t>
       
-    </section>
-
-    <section anchor="yang" title="YANG Module">
-
-      &ed-hint-rfcno-rev;
-
-      <figure>
-        &iana-dns-class-rr-type.yang;
-      </figure>
-
     </section>
 
     <section anchor="iana" title="IANA Considerations">
@@ -289,6 +278,14 @@
     <references title="Informative References">
       &RFC3597;
     </references>
+
+    <section anchor="app.xslt" title="XSLT Stylesheet">
+
+      <sourcecode
+	  markers="true"
+	  name="iana-dns-class-rr-type.xsl"
+	  type="xml">&xslt;</sourcecode>
+    </section>
     
   </back>
 </rfc>

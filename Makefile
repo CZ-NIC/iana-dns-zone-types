@@ -1,7 +1,7 @@
 I_D = draft-ietf-dnsop-iana-class-type-yang
 REVNO = 00
 DATE ?= $(shell date +%F)
-MODULES = iana-dns-class-rr-type
+MODULES =
 SUBMODULES =
 FIGURES =
 EXAMPLE_BASE = example
@@ -35,7 +35,7 @@ refs: stdrefs.ent
 
 yang: $(yass) $(yams)
 
-$(idrev).xml: $(I_D).xml $(yangsc) $(artworks) figures.ent yang.ent
+$(idrev).xml: $(I_D).xml $(yangsc) $(artworks) figures.ent iana-dns-class-rr-type.xsl.cdata
 	@xsltproc --novalid $(xslpars) $(xsldir)/upd-i-d.xsl $< | \
 	  xmllint --noent -o $@ -
 
@@ -96,6 +96,11 @@ endif
 	cat $< >> $@;                    \
 	echo ']]></artwork>' >> $@
 
+%.cdata: %
+	@echo '<![CDATA[' > $@; \
+	cat $< >> $@;                    \
+	echo ']]>' >> $@
+
 $(schemas): hello.xml
 	yang2dsdl $(y2dopts) -L $<
 
@@ -117,4 +122,4 @@ gittag: $(idrev).txt
 clean:
 	@rm -rf *.rng *.rnc *.sch *.dsrl hello.xml model.tree \
 	        $(yams) $(idrev).* $(yangsc) $(artworks) \
-		figures.ent yang.ent
+		figures.ent yang.ent *.cdata
