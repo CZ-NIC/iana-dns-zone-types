@@ -1,5 +1,5 @@
-I_D = draft-lhotka-dnsop-iana-class-type-yang
-REVNO = 02
+I_D = draft-ietf-dnsop-iana-class-type-yang
+REVNO = 00
 DATE ?= $(shell date +%F)
 MODULES = iana-dns-class-rr-type
 SUBMODULES =
