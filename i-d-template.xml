@@ -20,7 +20,7 @@
 <?rfc compact="yes"?>
 <?rfc subcompact="no"?>
 
-<rfc category="std" submissionType="IETF" consensus="false">
+<rfc category="std" submissionType="IETF" consensus="true">
   <front>
     <title abbrev="i-d-abbrev">I-D Title</title>
     <author fullname="Albert U. Thor" initials="A. U." surname="Thor">
