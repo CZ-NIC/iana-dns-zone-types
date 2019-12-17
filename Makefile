@@ -33,8 +33,11 @@ all: $(idrev).txt
 
 refs: stdrefs.ent
 
-yang: $(yass) $(yams)
+yang: iana-dns-class-rr-type.yang
 
+iana-dns-class-rr-type.yang: iana-dns-class-rr-type.xsl
+	curl https://www.iana.org/assignments/dns-parameters/dns-parameters.xml | \
+	  xsltproc -o $@ $< -
 $(idrev).xml: $(I_D).xml $(yangsc) $(artworks) figures.ent iana-dns-class-rr-type.xsl.cdata
 	@xsltproc --novalid $(xslpars) $(xsldir)/upd-i-d.xsl $< | \
 	  xmllint --noent -o $@ -
@@ -78,19 +81,6 @@ else
 	done
 endif
 
-%.yang: %.yinx
-	@xsltproc --xinclude $(xsldir)/canonicalize.xsl $< | \
-	  xsltproc --output $@ $(xslpars) $(xsldir)/yin2yang.xsl -
-
-%.yang.sc: %.yang
-	@pyang $(PYANG_OPTS) --ietf $<
-	@echo '<sourcecode name="'$*@$(DATE)'.yang" type="yang" markers="true">' > $@
-	@echo '<![CDATA[' >> $@
-	@echo >> $@
-	@cat $< >> $@
-	@echo >> $@
-	@echo ']]></sourcecode>' >> $@
-
 %.aw: %
 	@echo '<artwork><![CDATA[' > $@; \
 	cat $< >> $@;                    \
@@ -121,5 +111,5 @@ gittag: $(idrev).txt
 
 clean:
 	@rm -rf *.rng *.rnc *.sch *.dsrl hello.xml model.tree \
-	        $(yams) $(idrev).* $(yangsc) $(artworks) \
-		figures.ent yang.ent *.cdata
+	  $(idrev).* $(yangsc) $(artworks) figures.ent yang.ent \
+	  *.cdata iana-dns-class-rr-type.yang

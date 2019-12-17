@@ -3,6 +3,7 @@ figures.ent
 yang.ent
 *.sc
 *.aw
+*.cdata
 hello.xml
 model.tree
 *.rn[gc]
