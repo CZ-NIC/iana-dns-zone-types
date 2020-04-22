@@ -1,0 +1,117 @@
+\input slix
+
+\def\prop{{\bf Proposal: }}
+\def\opts{{\bf Options:}\numberList}
+\let\endOpts=\endNumberList
+\def\dstore#1{$\langle\hbox{#1}\rangle$}
+
+\title{YANG Types for DNS Classes and Resource Record Types}
+\subtitle{\normalSize\tt draft-ietf-dnsop-iana-class-type-yang-00}
+
+\author{Ladislav Lhotka}{lhotka@nic.cz}
+\authorB{Petr Špaček}{petr.spacek@nic.cz}
+
+\date [2020-04-23]
+
+\slide[Summary]
+
+Two IANA registries from [1] are defined as YANG derived types for use
+in data modelling:
+
+\bulletList
+\item DNS CLASSes
+\item Resource Record (RR) Types
+\endBulletList
+
+The document only provides an {\it initial revision\/} of the YANG
+module, plus detailed instructions for IANA that will henceforth
+maintain the module along with the registries.
+
+{\petit
+[1]~\URL{https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml}}
+
+\slide[Changes since draft-lhotka-dnsop-…-02] 
+
+\bulletList
+
+\item Instead of an initial revision of the YANG module, the
+document now contains an {\it XSLT 1.0\/} stylesheet to be used by
+IANA for generating the initial revision.
+
+\item IANA registry entries marked as “obsolete” or “deprecated” are
+mapped to YANG enums with
+
+{\tt status obsolete;}
+
+\endBulletList
+
+\slide[Initial revision of the YANG module]
+
+Appendix A contains XSLT stylesheet “iana-dns-class-rr-type.xsl” that
+transforms the current contents of the IANA registries (XML format)
+into the initial revision of the YANG module:
+
+\medskip
+
+{\petit\verbatim
+$ curl -s https://www.iana.org/assignments/dns-parameters/dns-parameters.xml \
+> | xsltproc iana-dns-class-rr-type.xsl -
+module iana-dns-class-rr-type {
+
+  yang-version 1.1;
+
+  namespace "urn:ietf:params:xml:ns:yang:iana-dns-class-rr-type";
+
+  prefix dnsct;
+
+  ...
+
+§}
+
+This solves the concerns that the RFC won't get updated with new
+revisions of the YANG module.
+
+Approval from IANA requested, no response yet.
+
+\slide[Semantics of {\it obsolete} and {\it deprecated}]
+
+IANA [RFC 8126]:
+
+\bulletList
+
+\item {\it obsolete} = “no longer in use”
+
+\item {\it deprecated} = “use is not recommended”
+
+\endBulletList
+
+YANG [RFC 7950]:
+
+\bulletList
+
+\item {\it obsolete} = “SHOULD NOT be implemented and/or can be removed from
+implementations”
+
+\item {\it deprecated} = “obsolete definition, but it permits new/continued
+implementation in order to foster interoperability with older/existing
+implementations”
+
+\endBulletList
+
+\bigskip
+
+{\bf Solution:} Both IANA terms are mapped to {\it obsolete\/} in YANG.
+
+\slide[Next steps]
+
+We received a few suggestions for improving the text.
+
+A {\tt-01} revision will be submitted after this interim meeting.
+
+The authors believe the document is {\bf ready for WGLC}, which will
+also include a review by YANG Doctors [2].
+
+{\petit
+[2] \URL{https://datatracker.ietf.org/group/yangdoctors/about/}}
+
+\bye

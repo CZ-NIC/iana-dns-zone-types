@@ -141,9 +141,11 @@
       }
       ...
     }
+    ...
   }
       </sourcecode>
       <t>The other type, "rr-type-name", is exactly analogical.</t>
+
       <t><xref target="RFC3597"/> introduced the option of specifying
       a class or RR type via its assigned decimal number, as an
       alternative to the mnemonic name. For example, the "IN" class
@@ -167,7 +169,6 @@
       "This type allows for referring to a DNS resource record type
        using either the assigned mnemonic name or numeric value.";
   }
-}
       </sourcecode>
       <t>As unassigned and reserved class and RR type values are not
       included in the mnemonic name enumerations, they can be used only
