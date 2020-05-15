@@ -28,7 +28,7 @@
     <author fullname="Ladislav Lhotka" initials="L." surname="Lhotka">
       <organization>CZ.NIC</organization>
       <address>
-        <email>lhotka@nic.cz</email>
+        <email>ladislav.lhotka@nic.cz</email>
       </address>
     </author>
     <author fullname="Petr Spacek" initials="P." surname="Spacek">
@@ -85,13 +85,14 @@
       and enumerations have to be translated into corresponding YANG
       types or other structures. Such translations should be
       straightforward and relatively uncontroversial.</t>
-      <t>This document is a first step in translating DNS-related IANA
-      registries to YANG. It contains the initial revision of the YANG
-      module "iana-dns-class-rr-type" that defines derived types
-      for the common parameters of DNS resource records (RR): class
-      and type. These YANG types, "dns-class" and "rr-type", reflect
-      the IANA registries "DNS CLASSes" and "Resource Record (RR)
-      TYPEs" <xref target="IANA-DNS-PARAMETERS"/>.</t>
+      <t>This document provides a translation of two fundamental
+      DNS-related IANA registries to YANG. It contains the initial
+      revision of the YANG module "iana-dns-class-rr-type" that
+      defines derived types for the common parameters of DNS resource
+      records (RR): class and type. These YANG types, "dns-class" and
+      "rr-type", reflect the IANA registries "DNS CLASSes" and
+      "Resource Record (RR) TYPEs" <xref
+      target="IANA-DNS-PARAMETERS"/>.</t>
       <t><xref target="app.xslt"/> contains an XSLT 1.0 stylesheet
       that is intended to be used by IANA for generating the initial
       revision of the "iana-dns-class-rr-type" YANG
@@ -144,13 +145,14 @@
     ...
   }
       </sourcecode>
-      <t>The other type, "rr-type-name", is exactly analogical.</t>
+      <t>The other derived type, "rr-type-name", is defined
+      analogically.</t>
 
       <t><xref target="RFC3597"/> introduced the option of specifying
       a class or RR type via its assigned decimal number, as an
       alternative to the mnemonic name. For example, the "IN" class
-      can be equivalently written as "CLASS1", and "AAAA" type as
-      "TYPE28".</t>
+      can be equivalently written as "CLASS1", and "AAAA" type can be
+      written as "TYPE28".</t>
       <t>Accordingly, the derived types "dns-class" and "rr-type" are
       defined in the YANG module as a union of two member types:</t>
       <ul>
@@ -171,8 +173,8 @@
   }
       </sourcecode>
       <t>As unassigned and reserved class and RR type values are not
-      included in the mnemonic name enumerations, they can be used only
-      via their decimal codes.</t>
+      included in the mnemonic name enumerations, they can only be specified
+      using their decimal values.</t>
       
     </section>
 

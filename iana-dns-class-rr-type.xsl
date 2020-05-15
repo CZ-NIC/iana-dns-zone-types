@@ -11,11 +11,8 @@
 
   <variable name="module-intro">
     <text>module iana-dns-class-rr-type {
-
   yang-version 1.1;
-
   namespace "urn:ietf:params:xml:ns:yang:iana-dns-class-rr-type";
-
   prefix dnsct;
 
   organization
@@ -36,7 +33,7 @@
     "This YANG module translates IANA registries 'DNS CLASSes' and
      'Resource Record (RR) TYPEs' to YANG derived types.
 
-     Copyright (c) 2019 IETF Trust and the persons identified as
+     Copyright (c) 2020 IETF Trust and the persons identified as
      authors of the code. All rights reserved.
 
      Redistribution and use in source and binary forms, with or

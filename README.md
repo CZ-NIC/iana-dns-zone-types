@@ -1,11 +1,13 @@
-iana-dns-zone
-=============
+# iana-dns-zone
 
-Development of a YANG module an internet-draft with types for use in
-DNS zone data.
+Development of a YANG module an Internet-Draft with derived types representing two IANA registries from [Domain Name System (DNS) Parameters](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml):
 
-* YANG module: [iana-dns-class-rr-type](https://github.com/CZ-NIC/iana-dns-zone-types/blob/master/iana-dns-class-rr-type.yang)
-* Internet-Draft: [draft-lhotka-dnsop-zone-yang-types](https://github.com/CZ-NIC/iana-dns-zone-types/wiki)
+- DNS CLASSes
+- Resource Record (RR) TYPEs
+
+## YANG Module [iana-dns-class-rr-type](https://github.com/CZ-NIC/iana-dns-zone-types/wiki)
+
+## Internet-Draft [draft-ietf-dnsop-iana-class-type-yang](https://tools.ietf.org/html/draft-ietf-dnsop-iana-class-type-yang)
 
 ---
 
