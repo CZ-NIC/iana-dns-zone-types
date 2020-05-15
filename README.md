@@ -5,9 +5,13 @@ Development of a YANG module an Internet-Draft with derived types representing t
 - DNS CLASSes
 - Resource Record (RR) TYPEs
 
-## YANG Module [iana-dns-class-rr-type](https://github.com/CZ-NIC/iana-dns-zone-types/wiki)
+## YANG Module
 
-## Internet-Draft [draft-ietf-dnsop-iana-class-type-yang](https://tools.ietf.org/html/draft-ietf-dnsop-iana-class-type-yang)
+[iana-dns-class-rr-type](https://github.com/CZ-NIC/iana-dns-zone-types/wiki)
+
+## Internet-Draft
+
+[draft-ietf-dnsop-iana-class-type-yang](https://tools.ietf.org/html/draft-ietf-dnsop-iana-class-type-yang)
 
 ---
 
