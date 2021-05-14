@@ -272,7 +272,7 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
   </xsl:template>
 
   <xsl:template name="chop-arg">
-    <xsl:param name="token-delim" select="'/'"/>
+    <xsl:param name="token-delim" select="' '"/>
     <xsl:param name="after" select="2"/>
     <xsl:variable name="qchar">"</xsl:variable>
     <xsl:variable name="cind">
@@ -390,7 +390,7 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
   </xsl:template>
 
   <xsl:template
-      match="yin:config|yin:default|yin:deviate|yin:error-app-tag
+      match="yin:config|yin:deviate|yin:error-app-tag
 	     |yin:fraction-digits|yin:key|yin:length|yin:mandatory
 	     |yin:max-elements|yin:min-elements|yin:ordered-by
 	     |yin:pattern|yin:position|yin:presence|yin:range
@@ -399,6 +399,16 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
     <xsl:call-template name="statement-dq">
       <xsl:with-param name="arg" select="@value"/>
     </xsl:call-template>
+  </xsl:template>
+
+  <xsl:template match="yin:default">
+    <xsl:call-template name="keyword"/>
+    <xsl:apply-templates select="@value" mode="chop"/>
+    <xsl:call-template name="semi-or-sub"/>
+  </xsl:template>
+
+  <xsl:template match="@value" mode="chop">
+    <xsl:call-template name="chop-arg"/>
   </xsl:template>
 
   <xsl:template match="yin:modifier|yin:prefix|yin:yang-version">
@@ -414,7 +424,9 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
   </xsl:template>
 
   <xsl:template match="@target-node|yin:path/@value">
-    <xsl:call-template name="chop-arg"/>
+    <xsl:call-template name="chop-arg">
+      <xsl:with-param name="token-delim" select="'/'"/>
+    </xsl:call-template>
   </xsl:template>
 
   <xsl:template match="yin:pattern/@value">
@@ -425,14 +437,7 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
   <xsl:template match="yin:error-message">
     <xsl:call-template name="keyword"/>
-    <xsl:apply-templates select="yin:value"/>
-  </xsl:template>
-
-  <xsl:template match="yin:error-message/yin:value">
-    <xsl:call-template name="chop-arg">
-      <xsl:with-param name="token-delim" select="' '"/>
-    </xsl:call-template>
-    <xsl:text>;&#xA;</xsl:text>
+    <xsl:apply-templates select="yin:value" mode="chop"/>
   </xsl:template>
 
   <xsl:template match="yin:contact|yin:description
