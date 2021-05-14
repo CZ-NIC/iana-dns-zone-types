@@ -24,7 +24,7 @@
     <title abbrev="iana-dns-class-rr-type-yang">YANG Types for DNS
     Classes and Resource Record Types</title>
     <seriesInfo name="Internet-Draft" status="standard"
-		value="draft-ietf-dnsop-iana-class-type-yang-02"/>
+		value="draft-ietf-dnsop-iana-class-type-yang-03"/>
     <author fullname="Ladislav Lhotka" initials="L." surname="Lhotka">
       <organization>CZ.NIC</organization>
       <address>
