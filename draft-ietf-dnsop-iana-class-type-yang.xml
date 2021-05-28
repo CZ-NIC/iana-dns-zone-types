@@ -76,7 +76,7 @@
       real potential can be realized only if there is a (completely or
       partly) unified data model supported by multiple DNS software
       implementations. Operators can then, for instance, run several
-      different DNS server implementations in parallel, and use a common
+      DNS server implementations in parallel, and use a common
       configuration and management interface and data for all of
       them. Also, it becomes considerably easier to migrate to another
       implementation.</t>
@@ -306,7 +306,7 @@ reference: RFC XXXX
 
     <section anchor="security" title="Security Considerations">
       
-      <t>This documents translates two IANA registries into YANG data
+      <t>This document translates two IANA registries into YANG data
       types and otherwise introduces no technology or
       protocol. Consequently, there are no security issues to be
       considered for this document.</t>

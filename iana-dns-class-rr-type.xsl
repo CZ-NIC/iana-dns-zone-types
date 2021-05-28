@@ -44,9 +44,9 @@
      (https://trustee.ietf.org/license-info).
 
      This initial version of this YANG module was generated from
-     the corresponding IANA registries using a XSLT stylesheet
+     the corresponding IANA registries using an XSLT stylesheet
      from Appendix A of RFC XXXX
-     (https://tools.ietf.org/html/rfcXXXX); see the RFC itself for
+     (https://www.rfc-editor.org/info/rfcXXXX); see the RFC itself for
      full legal notices.";
 
   reference
