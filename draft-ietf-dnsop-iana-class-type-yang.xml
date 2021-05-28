@@ -28,13 +28,19 @@
     <author fullname="Ladislav Lhotka" initials="L." surname="Lhotka">
       <organization>CZ.NIC</organization>
       <address>
+	<postal>
+	  <country>Czech Republic</country>
+	</postal>
         <email>ladislav.lhotka@nic.cz</email>
       </address>
     </author>
     <author fullname="Petr Spacek" initials="P." surname="Spacek">
-      <organization>CZ.NIC</organization>
+      <organization>Internet Systems Consortium</organization>
       <address>
-        <email>petr.spacek@nic.cz</email>
+	<postal>
+	  <country>Czech Republic</country>
+	</postal>
+        <email>pspacek@isc.org</email>
       </address>
     </author>
     <date year="2018-09-19"/>
