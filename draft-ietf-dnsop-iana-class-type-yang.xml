@@ -127,7 +127,7 @@
       CLASSes" and "Resource Record (RR) TYPEs". It is expected that
       the remaining registries in <xref
       target="IANA-DNS-PARAMETERS"/>, as well as other DNS-related
-      IANA registries, will be analogically reflected in future YANG
+      IANA registries, will be analogously reflected in future YANG
       modules as necessary. This way, an appropriate combination of
       YANG modules can be chosen depending on which YANG types are
       needed for a given data modeling purpose.</t>
@@ -152,7 +152,7 @@
   }
       </sourcecode>
       <t>The other derived type, "rr-type-name", is defined
-      analogically.</t>
+      similarly.</t>
 
       <t><xref target="RFC3597"/> introduced the option of specifying
       a class or RR type via its assigned decimal number, as an
