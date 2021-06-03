@@ -12,7 +12,8 @@
   <variable name="module-intro">
     <text>module iana-dns-class-rr-type {
   yang-version 1.1;
-  namespace "urn:ietf:params:xml:ns:yang:iana-dns-class-rr-type";
+  namespace
+    "urn:ietf:params:xml:ns:yang:iana-dns-class-rr-type";
   prefix dnsct;
 
   organization
@@ -46,8 +47,8 @@
      This initial version of this YANG module was generated from
      the corresponding IANA registries using an XSLT stylesheet
      from Appendix A of RFC XXXX
-     (https://www.rfc-editor.org/info/rfcXXXX); see the RFC itself for
-     full legal notices.";
+     (https://www.rfc-editor.org/info/rfcXXXX); see the RFC itself
+     for full legal notices.";
 
   reference
     "IANA 'Domain Name System (DNS) Parameters' registry

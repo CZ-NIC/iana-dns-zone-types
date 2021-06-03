@@ -62,10 +62,11 @@
       as specifying management operations and asynchronous
       notifications. It is reasonable to expect that the approach
       based on utilizing such data models along with standard
-      management protocols such as NETCONF and RESTCONF can be
-      effectively used in DNS operations, too. In fact, several
-      efforts are currently underway that attempt to use NETCONF or
-      RESTCONF for configuring and managing</t>
+      management protocols such as NETCONF <xref target="RFC6241"/>
+      and RESTCONF <xref target="RFC8040"/> can be effectively used in
+      DNS operations, too. In fact, several efforts are currently
+      underway that attempt to use NETCONF or RESTCONF for configuring
+      and managing</t>
       <ul>
         <li>authoritative servers</li>
         <li>resolvers</li>
@@ -112,8 +113,10 @@
 
       &kw-2119;
 
-      <t>The terminology for describing YANG data models is found in
-      <xref target="RFC7950"/>.</t>
+      <t>The terminology for describing YANG data models can be found
+      in <xref target="RFC7950"/>. DNS terminology used in this
+      document can be found in <xref target="RFC1035"/> and <xref
+      target="RFC8499"/>.</t>
 
     </section>
 
@@ -344,7 +347,11 @@ reference: RFC XXXX
     </references>
 
     <references title="Informative References">
+      &RFC1035;
       &RFC3597;
+      &RFC6241;
+      &RFC8040;
+      &RFC8499;
     </references>
 
     <section anchor="app.xslt" title="XSLT Stylesheet">
