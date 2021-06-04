@@ -122,18 +122,18 @@
 
     <section anchor="design" title="YANG Design Considerations">
 
-      <t>The IANA document "Domain Name System (DNS) Parameters" <xref
-      target="IANA-DNS-PARAMETERS"/> contains altogether thirteen
-      registries. The YANG module "iana-dns-class-rr-type" defines
-      derived types corresponding to only two of the registries that
-      are essential for data models involving zone data, namely "DNS
-      CLASSes" and "Resource Record (RR) TYPEs". It is expected that
-      the remaining registries in <xref
-      target="IANA-DNS-PARAMETERS"/>, as well as other DNS-related
-      IANA registries, will be analogously reflected in future YANG
-      modules as necessary. This way, an appropriate combination of
-      YANG modules can be chosen depending on which YANG types are
-      needed for a given data modeling purpose.</t>
+      <t>At the time of writing, the IANA document "Domain Name System
+      (DNS) Parameters" <xref target="IANA-DNS-PARAMETERS"/> contains
+      altogether thirteen registries. The YANG module
+      "iana-dns-class-rr-type" defines derived types corresponding to
+      only two of the registries that are essential for data models
+      involving zone data, namely "DNS CLASSes" and "Resource Record
+      (RR) TYPEs". It is expected that the remaining registries in
+      <xref target="IANA-DNS-PARAMETERS"/>, as well as other
+      DNS-related IANA registries, will be analogously reflected in
+      future YANG modules as necessary. This way, an appropriate
+      combination of YANG modules can be chosen depending on which
+      YANG types are needed for a given data modeling purpose.</t>
       <t>The registries "DNS CLASSes" and "Resource Record (RR) TYPEs"
       are transformed into YANG enumeration types "dns-class-name" and
       "rr-type-name", respectively. This is the initial fragment of

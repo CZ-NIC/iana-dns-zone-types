@@ -7,7 +7,6 @@
 
   <variable name="dq">"</variable>
   <variable name="sq">'</variable>
-  <variable name="lf">&#xA;</variable>
 
   <variable name="module-intro">
     <text>module iana-dns-class-rr-type {
