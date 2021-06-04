@@ -311,8 +311,11 @@ reference: RFC XXXX
       
       <t>This document translates two IANA registries into YANG data
       types and otherwise introduces no technology or
-      protocol. Consequently, there are no security issues to be
-      considered for this document.</t>
+      protocol. The definitions themselves have no security impact on
+      the Internet, but their use in concrete YANG modules might
+      have. The security considerations spelled out in the YANG
+      specification <xref target="RFC7950"/> apply for this document
+      as well.</t>
 
     </section>
 
