@@ -1,5 +1,5 @@
 I_D = draft-ietf-dnsop-iana-class-type-yang
-REVNO = 04
+REVNO = 05
 DATE ?= $(shell date +%F)
 MODULES =
 SUBMODULES =

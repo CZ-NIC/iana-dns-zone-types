@@ -228,8 +228,8 @@
 	<dd>Use the decimal value from the registry.</dd>
         <dt>&quot;status&quot;:</dt>
 	<dd>Include only if a class or type registration has been
-	deprecated or obsoleted. In both cases, use the value
-	"obsolete" as the argument of the "status" statement.</dd>
+	deprecated or obsoleted. IANA "deprecated" maps to YANG status
+	"deprecated", and IANA "obsolete" maps to YANG status "obsolete".</dd>
         <dt>&quot;description&quot;:</dt>
 	<dd>Replicate the corresponding information from the registry,
 	namely the full name of the new DNS class, or the meaning of
